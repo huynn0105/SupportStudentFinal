@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">QuanLyHocSinh</string>
+
+    <string-array name="Sex">
+        <item>Nam</item>
+        <item>Nữ</item>
+        <item>Khác</item>
+    </string-array>
+
+    <string-array name="bachoc">
+        <item>Trung cấp</item>
+        <item>Cao đẳng</item>
+    </string-array>
+
+    <string-array name="educational">
+        <item>Lớp 9</item>
+        <item>Lớp 10</item>
+        <item>Lớp 11</item>
+        <item>Lớp 12</item>
+        <item>Khác</item>
+    </string-array>
+</resources>
