@@ -15,10 +15,12 @@
         <activity android:name="com.example.Activity.TkbLopActivity" />
         <activity android:name="com.example.Activity.TraCuuHSTSActivity" />
         <activity
-            android:name="com.example.Activity.SignupActivity"
-            android:windowSoftInputMode="adjustResize" />
-        <activity android:name="com.example.Activity.LoginActivity" />
-        <activity android:name=".MainActivity">
+            android:name="com.example.Activity.SignUpActivity"
+            android:windowSoftInputMode="adjustResize" >
+
+        </activity>
+        <activity android:name="com.example.Activity.SignInActivity" />
+        <activity android:name="com.example.Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

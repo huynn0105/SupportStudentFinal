@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.example.quanlyhocsinh.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity {
     Button btn_login,btn_dangky;
 
     @Override

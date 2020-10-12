@@ -1,40 +1,60 @@
 package com.example.Model;
 
 
+
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
-public class TrainingLevel {
-@Element(name="TrainingLevelID")
-private String trainingLevelID;
 
-@Element(name="trainingLevelName")
-private String trainingLevelName;
+@Root(name = "TrainingLevelInfo")
+public class TrainingLevelInfo {
 
-@Element(name ="")
-private int learningLevel;
+    @Element(name = "TrainingLevelID",required = false)
+    private String TrainingLevelID;
 
-public String getTrainingLevelID() {
-return trainingLevelID;
-}
+    @Element(name = "TrainingLevelName",required = false)
+    private String TrainingLevelName;
 
-public void setTrainingLevelID(String trainingLevelID) {
-this.trainingLevelID = trainingLevelID;
-}
+    @Element(name = "ErrorCode", required = false)
+    private int ErrorCode;
 
-public String getTrainingLevelName() {
-return trainingLevelName;
-}
+    @Element(name = "ErrorDesc", required = false)
+    private String ErrorDesc;
 
-public void setTrainingLevelName(String trainingLevelName) {
-this.trainingLevelName = trainingLevelName;
-}
+    public String getErrorDesc() {
+        return ErrorDesc;
+    }
 
-public Integer getLearningLevel() {
-return learningLevel;
-}
+    public void setErrorDesc(String ErrorDesc) {
+        this.ErrorDesc = ErrorDesc;
+    }
 
-public void setLearningLevel(Integer learningLevel) {
-this.learningLevel = learningLevel;
-}
+    public String getTrainingLevelName() {
+        return TrainingLevelName;
+    }
 
+    public void setTrainingLevelName(String TrainingLevelName) {
+        this.TrainingLevelName = TrainingLevelName;
+    }
+
+    public int getErrorCode() {
+        return ErrorCode;
+    }
+
+    public void setErrorCode(int ErrorCode) {
+        this.ErrorCode = ErrorCode;
+    }
+
+    public String getTrainingLevelID() {
+        return TrainingLevelID;
+    }
+
+    public void setTrainingLevelID(String TrainingLevelID) {
+        this.TrainingLevelID = TrainingLevelID;
+    }
+
+    @Override
+    public String toString() {
+        return getTrainingLevelName();
+    }
 }

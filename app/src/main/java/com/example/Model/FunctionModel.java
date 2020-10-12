@@ -1,27 +1,27 @@
 package com.example.Model;
 
-public class ChucNang {
-    String tenChucNang;
-    int hinhAnh;
+public class FunctionModel {
+    String functionName;
+    int resourceId;
 
-    public ChucNang(String tenChucNang, int hinhAnh) {
-        this.tenChucNang = tenChucNang;
-        this.hinhAnh = hinhAnh;
+    public FunctionModel(String functionName, int resourceId) {
+        this.functionName = functionName;
+        this.resourceId = resourceId;
     }
 
-    public String getTenChucNang() {
-        return tenChucNang;
+    public String getFunctionName() {
+        return functionName;
     }
 
-    public void setTenChucNang(String tenChucNang) {
-        this.tenChucNang = tenChucNang;
+    public void setFunctionName(String functionName) {
+        this.functionName = functionName;
     }
 
-    public int getHinhAnh() {
-        return hinhAnh;
+    public int getResourceId() {
+        return resourceId;
     }
 
-    public void setHinhAnh(int hinhAnh) {
-        this.hinhAnh = hinhAnh;
+    public void setResourceId(int resourceId) {
+        this.resourceId = resourceId;
     }
 }

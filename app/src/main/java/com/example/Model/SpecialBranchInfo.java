@@ -1,64 +1,78 @@
 package com.example.Model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
-public class SpecialBranch {
+@Root(name = "SpecialBranchInfo")
+public class SpecialBranchInfo {
+    @Element(name = "SpecialBranchID")
+    private String SpecialBranchID;
 
-@SerializedName("SpecialBranchID")
-@Expose
-private String specialBranchID;
-@SerializedName("SpecialBranchName")
-@Expose
-private String specialBranchName;
-@SerializedName("SpecialBranchShortName")
-@Expose
-private String specialBranchShortName;
-@SerializedName("BranchID")
-@Expose
-private String branchID;
-@SerializedName("SpecialBranchNameEn")
-@Expose
-private Object specialBranchNameEn;
+    @Element(name = "Weblink", required = false)
+    private String Weblink;
 
-public String getSpecialBranchID() {
-return specialBranchID;
-}
+    @Element(name = "ErrorDesc", required = false)
+    private String ErrorDesc;
 
-public void setSpecialBranchID(String specialBranchID) {
-this.specialBranchID = specialBranchID;
-}
+    @Element(name = "SpecialBranchShortName", required = false)
+    private String SpecialBranchShortName;
 
-public String getSpecialBranchName() {
-return specialBranchName;
-}
+    @Element(name = "ErrorCode", required = false)
+    private String ErrorCode;
 
-public void setSpecialBranchName(String specialBranchName) {
-this.specialBranchName = specialBranchName;
-}
+    @Element(name = "SpecialBranchName")
+    private String SpecialBranchName;
 
-public String getSpecialBranchShortName() {
-return specialBranchShortName;
-}
+    public String getSpecialBranchID() {
+        return SpecialBranchID;
+    }
 
-public void setSpecialBranchShortName(String specialBranchShortName) {
-this.specialBranchShortName = specialBranchShortName;
-}
+    public void setSpecialBranchID(String SpecialBranchID) {
+        this.SpecialBranchID = SpecialBranchID;
+    }
 
-public String getBranchID() {
-return branchID;
-}
+    public String getWeblink() {
+        return Weblink;
+    }
 
-public void setBranchID(String branchID) {
-this.branchID = branchID;
-}
+    public void setWeblink(String Weblink) {
+        this.Weblink = Weblink;
+    }
 
-public Object getSpecialBranchNameEn() {
-return specialBranchNameEn;
-}
+    public String getErrorDesc() {
+        return ErrorDesc;
+    }
 
-public void setSpecialBranchNameEn(Object specialBranchNameEn) {
-this.specialBranchNameEn = specialBranchNameEn;
-}
+    public void setErrorDesc(String ErrorDesc) {
+        this.ErrorDesc = ErrorDesc;
+    }
 
+    public String getSpecialBranchShortName() {
+        return SpecialBranchShortName;
+    }
+
+    public void setSpecialBranchShortName(String SpecialBranchShortName) {
+        this.SpecialBranchShortName = SpecialBranchShortName;
+    }
+
+    public String getErrorCode() {
+        return ErrorCode;
+    }
+
+    public void setErrorCode(String ErrorCode) {
+        this.ErrorCode = ErrorCode;
+    }
+
+    public String getSpecialBranchName() {
+        return SpecialBranchName;
+    }
+
+    public void setSpecialBranchName(String SpecialBranchName) {
+        this.SpecialBranchName = SpecialBranchName;
+    }
+
+    @Override
+    public String toString() {
+        return getSpecialBranchName();
+    }
 }
