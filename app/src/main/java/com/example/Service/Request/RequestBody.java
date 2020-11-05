@@ -1,5 +1,7 @@
 package com.example.Service.Request;
 
+import com.example.Model.StudentCollectionInfo;
+
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.NamespaceList;
@@ -22,4 +24,7 @@ public class RequestBody {
     @Element(name = "GetSpecialBranch",required = false)
     public RequestModel GetSpecialBranch;
 
+
+    @Element(name = "CreateStudentCollection",required = false)
+    public StudentCollectionInfo CreateStudentCollection;
 }

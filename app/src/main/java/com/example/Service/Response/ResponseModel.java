@@ -24,4 +24,6 @@ public class ResponseModel {
     @ElementList(name = "GetSpecialBranchResult",required = false)
     public List<SpecialBranchInfo> resultSpecialBranch;
 
+    @ElementList(name = "CreateStudentCollectionResult",required = false)
+    public List<SpecialBranchInfo> resultStudentCollection;
 }

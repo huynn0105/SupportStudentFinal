@@ -12,4 +12,7 @@ public class ResponseBody {
 
     @Element(name = "GetSpecialBranchResponse", required = false)
     public ResponseModel getSpecialBranchModel;
+
+    @Element(name = "CreateStudentCollectionResponse", required = false)
+    public ResponseModel getStudentCollectionModel;
 }
