@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.quanlyhocsinh.R;
 
 public class SignInActivity extends AppCompatActivity {
-    Button btn_login,btn_dangky;
+    Button btn_login,btn_dangky,btn_tracuu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,16 +18,14 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         init();
 
-        btn_dangky.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //startActivity(new Intent(LoginActivity.this,SignupActivity.class));
-            }
-        });
+        btn_dangky.setOnClickListener(view -> startActivity(new Intent(SignInActivity.this,SignUpActivity.class)));
+
+        btn_tracuu.setOnClickListener(view -> startActivity(new Intent(SignInActivity.this,TraCuuHSTSActivity.class)));
     }
 
     private void init() {
         btn_login = findViewById(R.id.btn_login);
         btn_dangky = findViewById(R.id.btn_dangky);
+        btn_tracuu = findViewById(R.id.btn_tracuu);
     }
 }

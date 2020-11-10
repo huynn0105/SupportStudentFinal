@@ -21,4 +21,13 @@ public interface DataInterface {
     @Headers({"Content-Type: text/xml; charset=utf-8", "SOAPAction: http://thienhaso.com/GetSpecialBranch"})
     @POST("AccountAPI.asmx")
     Call<ResponseEnvelope> GetSpecialBranch(@Body RequestEnvelope requestEnvelope);
+
+    @Headers({"Content-Type: text/xml; charset=utf-8", "SOAPAction: http://thienhaso.com/CreateStudentCollection"})
+    @POST("AccountAPI.asmx")
+    Call<ResponseEnvelope> CreateStudentCollection (@Body RequestEnvelope requestEnvelope);
+
+
+    @Headers({"Content-Type: text/xml; charset=utf-8", "SOAPAction: http://thienhaso.com/GetStudentCollection"})
+    @POST("AccountAPI.asmx")
+    Call<ResponseEnvelope> GetStudentCollection (@Body RequestEnvelope requestEnvelope);
 }

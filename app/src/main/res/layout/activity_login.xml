@@ -119,8 +119,20 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
                     android:background="@drawable/custom_btn_signup"
-                    android:text="Đăng ký xét tuyển
-"
+                    android:text="Đăng ký xét tuyển"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/btn_tracuu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/bg_btn"
+                    android:text="Tra cứu tuyển sinh"
                     android:textColor="#fff"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />

@@ -20,7 +20,7 @@
         android:orientation="vertical">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_mail"
+        android:id="@+id/input_mshs"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/edt_mail"
+            android:id="@+id/edt_mshs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Mã số hồ sơ"
@@ -42,7 +42,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
 
-        android:id="@+id/input_password"
+        android:id="@+id/input_fullName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/edt_password"
+            android:id="@+id/edt_fullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edt_mail"
@@ -76,7 +76,7 @@
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_tracuu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"

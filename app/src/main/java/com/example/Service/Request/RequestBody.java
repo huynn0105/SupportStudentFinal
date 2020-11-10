@@ -26,5 +26,8 @@ public class RequestBody {
 
 
     @Element(name = "CreateStudentCollection",required = false)
-    public StudentCollectionInfo CreateStudentCollection;
+    public RequestModel CreateStudentCollection;
+
+    @Element(name = "GetStudentCollection",required = false)
+    public RequestModel GetStudentCollection;
 }

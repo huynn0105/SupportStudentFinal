@@ -27,6 +27,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_fullName"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -38,6 +39,7 @@
                 tools:ignore="MissingConstraints">
 
                 <EditText
+                    android:id="@+id/edt_fullName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -47,7 +49,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_5sdp"
@@ -56,8 +58,9 @@
                 android:weightSum="3">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_birthDay"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_90sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_2sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
@@ -67,6 +70,7 @@
                     tools:ignore="MissingConstraints">
 
                     <EditText
+                        android:id="@+id/edt_birthDay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_20sdp"
@@ -76,8 +80,9 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_birthMonth"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_90sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginTop="@dimen/_2sdp"
@@ -88,6 +93,7 @@
                     tools:ignore="MissingConstraints">
 
                     <EditText
+                        android:id="@+id/edt_birthMonth"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/edt_password"
@@ -95,11 +101,14 @@
                         android:drawablePadding="@dimen/_10sdp"
                         android:hint="Tháng sinh"
                         android:inputType="numberDecimal" />
+
+
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_birthYear"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_90sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginTop="@dimen/_2sdp"
@@ -109,6 +118,7 @@
                     tools:ignore="MissingConstraints">
 
                     <EditText
+                        android:id="@+id/edt_birthYear"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/edt_password"
@@ -145,6 +155,7 @@
             <!--            </com.google.android.material.textfield.TextInputLayout>-->
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_gender"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -166,6 +177,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_birthPlace"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -177,6 +189,7 @@
                 tools:ignore="MissingConstraints">
 
                 <EditText
+                    android:id="@+id/edt_birthPlace"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_20sdp"
@@ -186,6 +199,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_tel"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -197,16 +211,18 @@
                 tools:ignore="MissingConstraints">
 
                 <EditText
+                    android:id="@+id/edt_tel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/edt_password"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:drawablePadding="@dimen/_10sdp"
                     android:hint="Điện thoại thí sinh"
-                    android:inputType="text" />
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_tel2"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -218,6 +234,7 @@
                 tools:ignore="MissingConstraints">
 
                 <EditText
+                    android:id="@+id/edt_tel2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/edt_password"
@@ -225,9 +242,11 @@
                     android:drawablePadding="@dimen/_10sdp"
                     android:hint="Điện thoại phụ huynh"
                     android:inputType="number" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_address"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -239,6 +258,7 @@
                 tools:ignore="MissingConstraints">
 
                 <EditText
+                    android:id="@+id/edt_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/edt_password"
@@ -249,13 +269,14 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_learningLevelID"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:hint="Trình độ tốt nghiệp"
+                android:hint="Trình độ"
                 android:orientation="horizontal">
 
                 <AutoCompleteTextView
@@ -263,12 +284,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:focusable="false"
-                    android:inputType="none"
                     tools:ignore="LabelFor" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
+
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_trainingLevelID"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -287,23 +309,21 @@
                     tools:ignore="LabelFor" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
-
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_specialBranchID"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:hint="Ngành đào tạo"
-                android:orientation="horizontal">
+                android:hint="Ngành đào tạo">
 
                 <AutoCompleteTextView
+                    android:focusable="false"
                     android:id="@+id/dropdown_specialBranch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
                     tools:ignore="LabelFor" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -340,7 +360,6 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:focusable="true"
@@ -401,6 +420,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_schoolName"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -412,6 +432,7 @@
                 tools:ignore="MissingConstraints">
 
                 <EditText
+                    android:id="@+id/edt_schoolName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/edt_password"
@@ -422,7 +443,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/btn_update"
+                android:id="@+id/btn_submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"

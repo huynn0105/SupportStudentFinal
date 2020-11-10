@@ -23,7 +23,7 @@ public class TraCuuSVActivity extends AppCompatActivity {
     Toolbar toolbar;
     Button tracuu;
     TextInputLayout input_date;
-    EditText edt_date, edt_ma_baove, edt_hoten, edt_mssv;
+    EditText edt_date, edt_ma_baove, edt_hoten, edt_mshs;
     Calendar date;
 
     @Override
@@ -34,7 +34,7 @@ public class TraCuuSVActivity extends AppCompatActivity {
         tracuu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (edt_date.getText().toString().equals("") || edt_hoten.getText().toString().equals("") || edt_ma_baove.getText().toString().equals("") || edt_mssv.getText().toString().equals("")) {
+                if (edt_date.getText().toString().equals("") || edt_hoten.getText().toString().equals("") ) {
                     Toast.makeText(TraCuuSVActivity.this, "Bạn chưa nhập thông tin", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -44,12 +44,12 @@ public class TraCuuSVActivity extends AppCompatActivity {
 
     private void init() {
         tracuu = findViewById(R.id.btn_tracuu);
-        input_date = findViewById(R.id.input_date);
+
         toolbar = findViewById(R.id.toolbar);
-        edt_date = findViewById(R.id.edt_date);
+
         edt_ma_baove = findViewById(R.id.edt_ma_baove);
         edt_hoten = findViewById(R.id.edt_hoten);
-        edt_mssv = findViewById(R.id.edt_mssv);
+        edt_mshs = findViewById(R.id.edt_mshs);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

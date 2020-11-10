@@ -13,9 +13,9 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <LinearLayout
+        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -31,10 +31,10 @@
             tools:ignore="MissingConstraints">
 
             <EditText
-                android:id="@+id/edt_mssv"
+                android:id="@+id/edt_mshs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Mã số sinh viên"
+                android:hint="Mã số hồ sơ"
                 android:inputType="none"
                 tools:ignore="Autofill,HardcodedText" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -62,32 +62,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <com.google.android.material.textfield.TextInputLayout
-
-            android:id="@+id/input_date"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_20sdp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            tools:ignore="MissingConstraints">
-
-            <EditText
-                android:id="@+id/edt_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:cursorVisible="false"
-                android:focusable="false"
-                android:hint="Ngày tháng năm sinh"
-                android:onClick="setDate"
-                tools:ignore="Autofill,HardcodedText,TextFields" />
-
-        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
 

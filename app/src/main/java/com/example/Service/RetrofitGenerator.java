@@ -34,7 +34,7 @@ public class RetrofitGenerator {
                 Request original = chain.request();
 
                 Request.Builder requestBuilder = original.newBuilder()
-                        .header("Content-Type", "text/xml;charset=UTF-8")   // 对于SOAP 1.1， 如果是soap1.2 应是Content-Type: application/soap+xml; charset=utf-8
+                        .header("Content-Type", "text/xml;charset=UTF-8")
                         .method(original.method(), original.body());
 
                 Request request = requestBuilder.build();

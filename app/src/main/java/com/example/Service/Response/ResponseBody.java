@@ -14,5 +14,9 @@ public class ResponseBody {
     public ResponseModel getSpecialBranchModel;
 
     @Element(name = "CreateStudentCollectionResponse", required = false)
+    public ResponseModel createStudentCollectionModel;
+
+    @Element(name = "GetStudentCollectionResponse", required = false)
     public ResponseModel getStudentCollectionModel;
+
 }
