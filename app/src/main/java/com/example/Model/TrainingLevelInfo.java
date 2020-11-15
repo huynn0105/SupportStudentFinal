@@ -25,36 +25,17 @@ public class TrainingLevelInfo {
         return ErrorDesc;
     }
 
-    public void setErrorDesc(String ErrorDesc) {
-        this.ErrorDesc = ErrorDesc;
-    }
-
     public String getTrainingLevelName() {
         return TrainingLevelName;
-    }
-
-    public void setTrainingLevelName(String TrainingLevelName) {
-        this.TrainingLevelName = TrainingLevelName;
-    }
-
-    public int getErrorCode() {
-        return ErrorCode;
-    }
-
-    public void setErrorCode(int ErrorCode) {
-        this.ErrorCode = ErrorCode;
     }
 
     public String getTrainingLevelID() {
         return TrainingLevelID;
     }
 
-    public void setTrainingLevelID(String TrainingLevelID) {
-        this.TrainingLevelID = TrainingLevelID;
-    }
 
     @Override
     public String toString() {
-        return getTrainingLevelName();
+        return TrainingLevelName;
     }
 }

@@ -63,7 +63,12 @@ public class TraCuuHSTSActivity extends AppCompatActivity {
     public void getStudentCollection(long studentCollectionID, String keyWord) {
         RequestEnvelope requestEnvelop = new RequestEnvelope();
         RequestBody requestBody = new RequestBody();
-        requestBody.GetStudentCollection = new RequestModel("", studentCollectionID, keyWord, "");
+        requestBody.GetStudentCollection = RequestModel.builder()
+                .keyWord(keyWord)
+                .studentCollectionID(studentCollectionID)
+                .topRow(1)
+                .pageIndexForGet(1)
+                .build();
         requestEnvelop.setRequestBody(requestBody);
         Call<ResponseEnvelope> call = RetrofitGenerator.getRetrofit().GetStudentCollection(requestEnvelop);
         call.enqueue(new Callback<ResponseEnvelope>() {
@@ -72,14 +77,14 @@ public class TraCuuHSTSActivity extends AppCompatActivity {
                 ResponseEnvelope responseEnvelope = response.body();
                 if (responseEnvelope != null) {
                     List<StudentCollectionInfo> studentCollectionInfo = responseEnvelope.responseBody.getStudentCollectionModel.resultStudentCollection;
-                    if (studentCollectionInfo != null && studentCollectionInfo.size()!=0) {
+                    if (studentCollectionInfo != null && studentCollectionInfo.size() != 0) {
                         Intent intent = new Intent(TraCuuHSTSActivity.this, StudentCollectionActivity.class);
                         intent.putExtra("Student", studentCollectionInfo.get(0));
                         startActivity(intent);
                     } else {
                         Toast.makeText(TraCuuHSTSActivity.this, "Mã hồ sơ hoặc tên không tồn tại", Toast.LENGTH_SHORT).show();
                     }
-                }else Toast.makeText(TraCuuHSTSActivity.this, "Lỗi", Toast.LENGTH_SHORT).show();
+                } else Toast.makeText(TraCuuHSTSActivity.this, "Lỗi", Toast.LENGTH_SHORT).show();
             }
 
             @Override

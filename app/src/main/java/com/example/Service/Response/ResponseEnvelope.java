@@ -8,6 +8,4 @@ import org.simpleframework.xml.Root;
 public class ResponseEnvelope {
     @Element(name = "Body")
     public ResponseBody responseBody;
-
-
 }

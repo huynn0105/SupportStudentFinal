@@ -8,7 +8,7 @@ import retrofit2.http.Body;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
-public interface DataInterface {
+public interface StudentAPI {
 
     @Headers({"Content-Type: text/xml; charset=utf-8", "SOAPAction: http://thienhaso.com/GetLearningLevel"})
     @POST("AccountAPI.asmx")
@@ -26,8 +26,19 @@ public interface DataInterface {
     @POST("AccountAPI.asmx")
     Call<ResponseEnvelope> CreateStudentCollection (@Body RequestEnvelope requestEnvelope);
 
-
     @Headers({"Content-Type: text/xml; charset=utf-8", "SOAPAction: http://thienhaso.com/GetStudentCollection"})
     @POST("AccountAPI.asmx")
     Call<ResponseEnvelope> GetStudentCollection (@Body RequestEnvelope requestEnvelope);
+
+    @Headers({"Content-Type: text/xml; charset=utf-8", "SOAPAction: http://thienhaso.com/LoginStudent"})
+    @POST("AccountAPI.asmx")
+    Call<ResponseEnvelope> LoginStudent (@Body RequestEnvelope requestEnvelope);
+
+    @Headers({"Content-Type: text/xml; charset=utf-8", "SOAPAction: http://thienhaso.com/GetSubjectMark"})
+    @POST("AccountAPI.asmx")
+    Call<ResponseEnvelope> GetSubjectMark (@Body RequestEnvelope requestEnvelope);
+
+    @Headers({"Content-Type: text/xml; charset=utf-8", "SOAPAction: http://thienhaso.com/GetSchedule"})
+    @POST("AccountAPI.asmx")
+    Call<ResponseEnvelope> GetSchedule (@Body RequestEnvelope requestEnvelope);
 }

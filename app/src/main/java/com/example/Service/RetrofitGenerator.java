@@ -16,14 +16,14 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 public class RetrofitGenerator {
     public final static String BASE_URL = "http://phanmemdaotao.com/testapi/";
-    public static DataInterface dataInterface;
+    public static StudentAPI studentAPI;
 
-    private static Strategy strategy = new AnnotationStrategy();
-    private static Serializer serializer = new Persister(strategy);
+    private static final Strategy strategy = new AnnotationStrategy();
+    private static final Serializer serializer = new Persister(strategy);
 
-    private static OkHttpClient.Builder okHttpClient = new OkHttpClient.Builder();
+    private static final OkHttpClient.Builder okHttpClient = new OkHttpClient.Builder();
 
-    private static Retrofit.Builder retrofitBuilder =  new Retrofit.Builder()
+    private static final Retrofit.Builder retrofitBuilder =  new Retrofit.Builder()
             .addConverterFactory(SimpleXmlConverterFactory.create(serializer))
             .baseUrl(BASE_URL);
 
@@ -32,7 +32,6 @@ public class RetrofitGenerator {
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {
                 Request original = chain.request();
-
                 Request.Builder requestBuilder = original.newBuilder()
                         .header("Content-Type", "text/xml;charset=UTF-8")
                         .method(original.method(), original.body());
@@ -50,11 +49,13 @@ public class RetrofitGenerator {
         return retrofit.create(serviceClass);
     }
 
-    public static DataInterface getRetrofit() {
-        if(dataInterface == null) {
-            dataInterface = createService(DataInterface.class);
+
+
+    public static StudentAPI getRetrofit() {
+        if(studentAPI == null) {
+            studentAPI = createService(StudentAPI.class);
         }
-        return dataInterface;
+        return studentAPI;
 
     }
 }

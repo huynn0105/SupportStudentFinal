@@ -11,7 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.example.Activity.SignUpActivity;
+import com.example.Activity.RegisterActivity;
+import com.example.Activity.StudentInfoActivity;
 import com.example.Model.FunctionModel;
 import com.example.quanlyhocsinh.R;
 
@@ -23,10 +24,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     Context context;
     List<FunctionModel> functionModelList;
+    private final ItemClickListener listener;
 
-    public MainAdapter(Context context, ArrayList<FunctionModel> functionModelList) {
+    public MainAdapter(Context context, ArrayList<FunctionModel> functionModelList, ItemClickListener listener) {
         this.context = context;
         this.functionModelList = functionModelList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -43,21 +46,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         holder.img_logo.setImageResource(func.getResourceId());
 
         holder.itemView.setOnClickListener(view -> {
-            switch (position){
-                case 0:
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-
-                    break;
-                case 5:
-                    context.startActivity(new Intent(context, SignUpActivity.class));
-                    break;
+            if(listener!=null){
+                listener.onClick(position);
             }
         });
     }

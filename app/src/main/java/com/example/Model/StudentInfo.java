@@ -1,21 +1,21 @@
 package com.example.Model;
 
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
 import java.io.Serializable;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-
+@ToString
 @Getter
 @Setter
-public class StudentCollectionInfo implements Serializable {
-    @Element(name = "StudentCollectionID", required = false)
-    long StudentCollectionID;
+@Root(name = "StudentInfo")
+public class StudentInfo implements Serializable {
+    @Element(name = "StudentID", required = false)
+    long StudentID;
     @Element(name = "FullName", required = false)
     String FullName;
     @Element(name = "BirthDay", required = false)
@@ -28,34 +28,22 @@ public class StudentCollectionInfo implements Serializable {
     String BirthDateText;
     @Element(name = "BirthPlace", required = false)
     String BirthPlace;
-    @Element(name = "Address", required = false)
-    String Address;
+    @Element(name = "LiveAddress", required = false)
+    String LiveAddress;
     @Element(name = "Tel", required = false)
     String Tel;
-    @Element(name = "Tel2", required = false)
-    String Tel2;
+    @Element(name = "ContactTel", required = false)
+    String ContactTel;
     @Element(name = "Email", required = false)
     String Email;
     @Element(name = "Facebook", required = false)
     String Facebook;
-    @Element(name = "LearningLevelID", required = false)
-    int LearningLevelID;
-    @Element(name = "TrainingLevelID", required = false)
-    String TrainingLevelID;
-    @Element(name = "SpecialBranchID", required = false)
-    String SpecialBranchID;
-    @Element(name = "schoolName", required = false)
-    String schoolName;
+    @Element(name = "ClassID", required = false)
+    String ClassID;
     @Element(name = "CreatedDate", required = false)
     String CreatedDate;
-    @Element(name = "IsRegisterOnline", required = false)
-    boolean IsRegisterOnline;
-    @Element(name = "StudentCollectionStatusID", required = false)
-    int StudentCollectionStatusID;
     @Element(name = "ErrorCode", required = false)
     int ErrorCode;
     @Element(name = "ErrorDesc", required = false)
     String ErrorDesc;
-
-
 }

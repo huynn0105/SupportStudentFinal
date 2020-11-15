@@ -19,7 +19,7 @@
             android:layout_height="@dimen/_90sdp"
             android:src="@drawable/ic_eclip_h"/>
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/tv_fullName"
             android:textAllCaps="true"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_25sdp"
@@ -31,21 +31,22 @@
             android:layout_height="wrap_content"
             android:text="Tên sinh viên"/>
         <TextView
-            android:id="@+id/mssv"
+            android:id="@+id/tv_mssv"
             android:textStyle="bold"
             android:textColor="#fff"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_toEndOf="@id/img_avatar"
-            android:layout_below="@id/tv_name"
+            android:layout_below="@id/tv_fullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mã SV:"/>
         <TextView
+            android:id="@+id/tv_class"
             android:textStyle="bold"
             android:textColor="#fff"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_toEndOf="@id/img_avatar"
-            android:layout_below="@id/mssv"
+            android:layout_below="@id/tv_fullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Lớp:"/>

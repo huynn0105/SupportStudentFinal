@@ -6,10 +6,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.Model.StudentCollectionInfo;
 import com.example.quanlyhocsinh.R;
@@ -38,7 +36,7 @@ public class StudentCollectionActivity extends AppCompatActivity {
                 text_title.setVisibility(View.GONE);
             StudentCollectionInfo studentCollectionInfo = (StudentCollectionInfo) intent.getSerializableExtra("Student");
             if (studentCollectionInfo != null) {
-                tv_studentCollectionID.setText(studentCollectionInfo.getStudentCollectionID());
+                tv_studentCollectionID.setText(studentCollectionInfo.getStudentCollectionID()+"");
                 tv_fullName.setText(studentCollectionInfo.getFullName());
                 if (studentCollectionInfo.getBirthDateText() != null)
                     tv_birthDateText.setText(studentCollectionInfo.getBirthDateText());
@@ -72,6 +70,7 @@ public class StudentCollectionActivity extends AppCompatActivity {
                 }
                 if (studentCollectionInfo.getFacebook() != null)
                     tv_facebook.setText(studentCollectionInfo.getFacebook());
+
                 else {
                     text_facebook.setVisibility(View.GONE);
                     tv_facebook.setVisibility(View.GONE);
@@ -83,7 +82,7 @@ public class StudentCollectionActivity extends AppCompatActivity {
                     text_schoolName.setVisibility(View.GONE);
                 }
                 if (studentCollectionInfo.getStudentCollectionStatusID() == 0)
-                    statusStudent = "Chưa xác định";
+                    statusStudent = "Chờ xét duyệt";
                 else if (studentCollectionInfo.getStudentCollectionStatusID() == 1)
                     statusStudent = "Chưa xử lý";
                 else if (studentCollectionInfo.getStudentCollectionStatusID() == 2)
@@ -122,6 +121,6 @@ public class StudentCollectionActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Thông tin hồ sơ");
         toolbar.setTitleTextColor(getResources().getColor(android.R.color.black));
-        toolbar.setNavigationOnClickListener(view->startActivity(new Intent(StudentCollectionActivity.this,SignInActivity.class)));
+        toolbar.setNavigationOnClickListener(view->startActivity(new Intent(StudentCollectionActivity.this, LoginActivity.class)));
     }
 }

@@ -37,7 +37,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SignUpActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     final String TAG = "TAG_ERROR";
     Calendar date;
     EditText edt_date, edt_fullName, edt_birthDay, edt_birthMonth, edt_birthYear, edt_birthPlace, edt_tel, edt_tel2, edt_address, edt_schoolName;
@@ -50,12 +50,11 @@ public class SignUpActivity extends AppCompatActivity {
     LearningLevelInfo learningLevelInfo;
     TrainingLevelInfo trainingLevelInfo;
     SpecialBranchInfo specialBranchInfo;
-    public static int flagSignUp = 1999;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_register);
         init();
         getLearningLevel();
         String[] sex = getResources().getStringArray(R.array.Sex);
@@ -81,10 +80,6 @@ public class SignUpActivity extends AppCompatActivity {
                 if (gender.equals("Nam")) genders = 0;
                 else if (gender.equals("Nữ")) genders = 1;
                 else genders = 2;
-                if(birthDay.isEmpty())
-                    birthDay = "0";
-                if(birthMonth.isEmpty())
-                    birthMonth="0";
                 createStudentCollection(fullName, Integer.parseInt(birthDay), Integer.parseInt(birthMonth), Integer.parseInt(birthYear), birthPlace, genders, address, tel, tel2, learningLevelInfo.getLearningLevelID(), trainingLevelInfo.getTrainingLevelID(), specialBranchInfo.getSpecialBranchID(), schoolName);
             } else {
                 Toast.makeText(this, "Error!!!", Toast.LENGTH_SHORT).show();
@@ -98,35 +93,31 @@ public class SignUpActivity extends AppCompatActivity {
                                  String schoolName) {
 
 
-
-
         if (fullName.isEmpty())
             input_fullName.setError("Không được bỏ trống!!!");
         else input_fullName.setError("");
 
         if (!birthDay.isEmpty()) {
-//            input_birthDay.setError("Không được bỏ trống!!!");
-//        else input_birthDay.setError("");
-
             if (isStringInt(birthDay)) {
                 if (Integer.parseInt(birthDay) > 31 && Integer.parseInt(birthDay) <= 0)
                     input_birthMonth.setError("Không hợp lệ!!!");
                 else input_birthMonth.setError("");
             } else
                 input_birthMonth.setError("Không hợp lệ!!!");
-        }
+        }else
+            input_birthDay.setError("Không được bỏ trống!!!");
+
 
         if (!birthMonth.isEmpty()) {
-//            input_birthMonth.setError("Không được bỏ trống!!!");
-//        else input_birthMonth.setError("");
-
             if (isStringInt(birthMonth)) {
                 if (Integer.parseInt(birthMonth) > 12 && Integer.parseInt(birthMonth) <= 0)
                     input_birthMonth.setError("Không hợp lệ!!!");
                 else input_birthMonth.setError("");
             } else
                 input_birthMonth.setError("Không hợp lệ!!!");
-        }
+        } else
+            input_birthMonth.setError("Không được bỏ trống!!!");
+
 
         if (birthYear.isEmpty())
             input_birthYear.setError("Không được bỏ trống!!!");
@@ -152,7 +143,6 @@ public class SignUpActivity extends AppCompatActivity {
             input_tel.setError("Không được bỏ trống!!!");
         else input_tel.setError("");
 
-
         if (address.isEmpty())
             input_address.setError("Không được bỏ trống!!!");
         else input_address.setError("");
@@ -175,6 +165,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         if (!fullName.isEmpty()
                 && !birthYear.isEmpty()
+                && !birthDay.isEmpty()
+                && !birthMonth.isEmpty()
                 && !birthPlace.isEmpty()
                 && learningLevelInfo != null
                 && !address.isEmpty()
@@ -201,7 +193,7 @@ public class SignUpActivity extends AppCompatActivity {
     public void getLearningLevel() {
         RequestEnvelope requestEnvelop = new RequestEnvelope();
         RequestBody requestBody = new RequestBody();
-        requestBody.GetLearningLevel = new RequestModel();
+        requestBody.GetLearningLevel = RequestModel.builder().build();
         requestEnvelop.setRequestBody(requestBody);
         Call<ResponseEnvelope> call = RetrofitGenerator.getRetrofit().GetLearningLevel(requestEnvelop);
         call.enqueue(new Callback<ResponseEnvelope>() {
@@ -211,7 +203,7 @@ public class SignUpActivity extends AppCompatActivity {
                 if (responseEnvelope != null) {
                     List<LearningLevelInfo> list = responseEnvelope.responseBody.getLearningLevelModel.resultLearningLevel;
                     if (list.size() != 0) {
-                        ArrayAdapter<LearningLevelInfo> adapter = new ArrayAdapter(SignUpActivity.this, android.R.layout.simple_expandable_list_item_1, list);
+                        ArrayAdapter<LearningLevelInfo> adapter = new ArrayAdapter(RegisterActivity.this, android.R.layout.simple_expandable_list_item_1, list);
                         edt_LearningLv.setAdapter(adapter);
                         edt_LearningLv.setOnItemClickListener((adapterView, view, i, l) -> {
                             learningLevelInfo = (LearningLevelInfo) adapterView.getAdapter().getItem(i);
@@ -233,7 +225,7 @@ public class SignUpActivity extends AppCompatActivity {
     public void getTrainingLevel(int learningLevelID) {
         RequestEnvelope requestEnvelop = new RequestEnvelope();
         RequestBody requestBody = new RequestBody();
-        requestBody.GetTrainingLevel = new RequestModel("", "", learningLevelID);
+        requestBody.GetTrainingLevel = RequestModel.builder().learningLevelID(learningLevelID).build();
         requestEnvelop.setRequestBody(requestBody);
         Call<ResponseEnvelope> call = RetrofitGenerator.getRetrofit().GetTrainingLevel(requestEnvelop);
         call.enqueue(new Callback<ResponseEnvelope>() {
@@ -244,7 +236,7 @@ public class SignUpActivity extends AppCompatActivity {
                     List<TrainingLevelInfo> list = new ArrayList<>();
                     list.clear();
                     list = responseEnvelope.responseBody.getTrainingLevelModel.resultTrainingLevel;
-                    ArrayAdapter<TrainingLevelInfo> adapter = new ArrayAdapter(SignUpActivity.this, android.R.layout.simple_expandable_list_item_1, list);
+                    ArrayAdapter<TrainingLevelInfo> adapter = new ArrayAdapter(RegisterActivity.this, android.R.layout.simple_expandable_list_item_1, list);
                     edt_TrainingLv.setText("");
                     edt_SpecialBranch.setText("");
                     edt_TrainingLv.setAdapter(adapter);
@@ -270,7 +262,7 @@ public class SignUpActivity extends AppCompatActivity {
     public void getSpecialBranch(int learningLevelID, String trainingLevelID) {
         RequestEnvelope requestEnvelop = new RequestEnvelope();
         RequestBody requestBody = new RequestBody();
-        requestBody.GetSpecialBranch = new RequestModel("", "", learningLevelID, trainingLevelID);
+        requestBody.GetSpecialBranch = RequestModel.builder().learningLevelID(learningLevelID).trainingLevelID(trainingLevelID).build();
         requestEnvelop.setRequestBody(requestBody);
         Call<ResponseEnvelope> call = RetrofitGenerator.getRetrofit().GetSpecialBranch(requestEnvelop);
         call.enqueue(new Callback<ResponseEnvelope>() {
@@ -279,7 +271,7 @@ public class SignUpActivity extends AppCompatActivity {
                 ResponseEnvelope responseEnvelope = response.body();
                 if (responseEnvelope != null) {
                     specialBranchInfoList = responseEnvelope.responseBody.getSpecialBranchModel.resultSpecialBranch;
-                    ArrayAdapter<TrainingLevelInfo> adapter = new ArrayAdapter(SignUpActivity.this, android.R.layout.simple_expandable_list_item_1, specialBranchInfoList);
+                    ArrayAdapter<TrainingLevelInfo> adapter = new ArrayAdapter(RegisterActivity.this, android.R.layout.simple_expandable_list_item_1, specialBranchInfoList);
                     edt_SpecialBranch.setText("");
                     edt_SpecialBranch.setAdapter(adapter);
                     edt_SpecialBranch.setOnItemClickListener((adapterView, view, i, l) -> {
@@ -372,11 +364,23 @@ public class SignUpActivity extends AppCompatActivity {
         RequestEnvelope requestEnvelop = new RequestEnvelope();
         RequestBody requestBody = new RequestBody();
 
-        requestBody.CreateStudentCollection =
-                new RequestModel(
-                        fullName, birthDay, birthMonth,
-                        birthYear, birthPlace, gender, address, tel, tel2,
-                        learningLevelID, specialBranchID, trainingLevelID, schoolName);
+
+        requestBody.CreateStudentCollection = RequestModel.builder()
+                .fullName(fullName)
+                .birthDay(birthDay)
+                .birthMonth(birthMonth)
+                .birthYear(birthYear)
+                .birthPlace(birthPlace)
+                .gender(gender)
+                .address(address)
+                .tel(tel)
+                .tel2(tel2)
+                .learningLevelID(learningLevelID)
+                .specialBranchID(specialBranchID)
+                .trainingLevelID(trainingLevelID)
+                .schoolName(schoolName)
+                .build();
+
 
         requestEnvelop.setRequestBody(requestBody);
         Call<ResponseEnvelope> callback = RetrofitGenerator.getRetrofit().CreateStudentCollection(requestEnvelop);
@@ -385,22 +389,26 @@ public class SignUpActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseEnvelope> call, Response<ResponseEnvelope> response) {
                 if (response.body() != null) {
                     StudentCollectionInfo studentCollectionInfo = response.body().responseBody.createStudentCollectionModel.resultCreateStudentCollection;
+                    Log.d("Dulieu", studentCollectionInfo.toString());
                     if (studentCollectionInfo.getErrorCode() != 0) {
-                        Toast.makeText(SignUpActivity.this, studentCollectionInfo.getErrorDesc(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, studentCollectionInfo.getErrorDesc(), Toast.LENGTH_SHORT).show();
                     } else {
-                        Intent intent = new Intent(SignUpActivity.this,StudentCollectionActivity.class);
-                        intent.putExtra("Student",studentCollectionInfo);
+                        Intent intent = new Intent(RegisterActivity.this, StudentCollectionActivity.class);
+                        intent.putExtra("Student", studentCollectionInfo);
                         intent.setFlags(-1);
                         startActivity(intent);
                         finish();
+                        Log.d("Dulieu", "Lỗi");
                     }
 
+                } else {
+                    Toast.makeText(RegisterActivity.this, "Lỗi không xác định", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseEnvelope> call, Throwable t) {
-                Log.d(TAG, t.getMessage());
+                Log.d(TAG + "111", t.getMessage());
             }
         });
 

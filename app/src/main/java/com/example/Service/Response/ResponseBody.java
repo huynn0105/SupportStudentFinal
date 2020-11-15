@@ -19,4 +19,13 @@ public class ResponseBody {
     @Element(name = "GetStudentCollectionResponse", required = false)
     public ResponseModel getStudentCollectionModel;
 
+    @Element(name = "LoginStudentResponse", required = false)
+    public ResponseModel getLoginStudentModel;
+
+    @Element(name = "GetSubjectMarkResponse", required = false)
+    public ResponseModel getSubjectMarkModel;
+
+    @Element(name = "GetScheduleResponse", required = false)
+    public ResponseModel getScheduleModel;
+
 }

@@ -13,24 +13,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.Activity.StudentCollectionActivity"/>
+        <activity android:name="com.example.Activity.ScheduleActivity"></activity>
+        <activity android:name="com.example.Activity.SubjectMarkActivity" />
+        <activity android:name="com.example.Activity.StudentInfoActivity" />
+        <activity android:name="com.example.Activity.StudentCollectionActivity" />
         <activity android:name="com.example.Activity.TraCuuSVActivity" />
         <activity android:name="com.example.Activity.TkbLopActivity" />
         <activity android:name="com.example.Activity.TraCuuHSTSActivity" />
         <activity
-            android:name="com.example.Activity.SignUpActivity"
+            android:name="com.example.Activity.RegisterActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.example.Activity.LoginActivity"
             android:windowSoftInputMode="adjustResize">
-        </activity>
-        <activity android:name="com.example.Activity.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.Activity.MainActivity" >
-
-        </activity>
+        <activity android:name="com.example.Activity.MainActivity" />
     </application>
 
 </manifest>
