@@ -28,4 +28,7 @@ public class ResponseBody {
     @Element(name = "GetScheduleResponse", required = false)
     public ResponseModel getScheduleModel;
 
+    @Element(name = "GetDebtDemoResponse", required = false)
+    public ResponseModel getDebtModel;
+
 }

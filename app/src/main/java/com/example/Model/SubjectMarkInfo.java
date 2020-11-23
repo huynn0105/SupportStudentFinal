@@ -3,6 +3,8 @@ package com.example.Model;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
+import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,7 +13,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @Root(name = "SubjectMarkInfo")
-public class SubjectMarkInfo {
+public class SubjectMarkInfo implements Serializable {
     @Element(name = "StudentID", required = false)
     long StudentID;
     @Element(name = "SubjectID", required = false)

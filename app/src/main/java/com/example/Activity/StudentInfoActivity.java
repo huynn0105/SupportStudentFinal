@@ -4,16 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.Model.StudentInfo;
 import com.example.quanlyhocsinh.R;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Objects;
+
+import static com.example.Activity.MainActivity.prefsEditor;
+import static com.example.Activity.MainActivity.sharedPref;
 
 public class StudentInfoActivity extends AppCompatActivity {
     EditText edt_fullName, edt_birthDay, edt_birthMonth, edt_birthYear, edt_birthPlace, edt_tel, edt_contactTel, edt_address, edt_class;
@@ -79,7 +85,20 @@ public class StudentInfoActivity extends AppCompatActivity {
     }
 
     public void logout(View view) {
-        startActivity(new Intent(StudentInfoActivity.this,LoginActivity.class));
-        finish();
+        if(isNetworkConnected()){
+            sharedPref = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+            prefsEditor = sharedPref.edit();
+            prefsEditor.clear();
+            prefsEditor.apply();
+            startActivity(new Intent(StudentInfoActivity.this,LoginActivity.class));
+            finish();
+        }else
+            Toast.makeText(this, "Có lỗi xảy ra!!!\nKiểm tra kết nối internet và thử lại sau", Toast.LENGTH_SHORT).show();
+    }
+
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 }

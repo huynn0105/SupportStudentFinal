@@ -41,4 +41,8 @@ public interface StudentAPI {
     @Headers({"Content-Type: text/xml; charset=utf-8", "SOAPAction: http://thienhaso.com/GetSchedule"})
     @POST("AccountAPI.asmx")
     Call<ResponseEnvelope> GetSchedule (@Body RequestEnvelope requestEnvelope);
+
+    @Headers({"Content-Type: text/xml; charset=utf-8", "SOAPAction: http://thienhaso.com/GetDebtDemo"})
+    @POST("AccountAPI.asmx")
+    Call<ResponseEnvelope> GetDebt (@Body RequestEnvelope requestEnvelope);
 }

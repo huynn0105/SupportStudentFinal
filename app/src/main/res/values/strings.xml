@@ -1,10 +1,90 @@
 <resources>
-    <string name="app_name">QuanLyHocSinh</string>
+    <string name="app_name">Support Student</string>
+    <string name="SubjectName">Tên môn học</string>
+    <string name="UnitText">Số TC:</string>
+    <string name="FinalSummary">Tổng kết môn lần cuối:</string>
+    <string name="TestAverage">Trung bình kiểm tra</string>
+    <string name="Exam1">Thi lần 1</string>
+    <string name="Summary1">Tổng kết môn lần 1</string>
+    <string name="Exam2">Thi lần 2</string>
+    <string name="Summary2">Tổng kết môn lần 2</string>
+    <string name="titleName">Hệ thống sinh viên</string>
+    <string name="todo">TODO</string>
+    <string name="mssv">Mã SV:</string>
+    <string name="classs">Lớp</string>
+    <string name="fullName">Họ và tên</string>
+    <string name="birthDay">Ngày sinh</string>
+    <string name="birthMonth">Tháng sinh</string>
+    <string name="BirthYear">Năm sinh</string>
+    <string name="gender">Giới tính</string>
+    <string name="birthPlace">Nơi sinh</string>
+    <string name="tel">Điện thoại thí sinh</string>
+    <string name="tel2">Điện thoại phụ huynh</string>
+    <string name="address">Địa chỉ thường trú</string>
+    <string name="learningLevel">Trình độ</string>
+    <string name="trainingLevel">Bậc học</string>
+    <string name="specialBranch">Ngành đào tạo</string>
+    <string name="sumMark12">Điểm trung bình lớp 12</string>
+    <string name="sum">Cả năm</string>
+    <string name="sum1">Học kì 1</string>
+    <string name="sum2">Học kì 2</string>
+    <string name="schoolName">Nơi tốt nghiệp</string>
+    <string name="confirm">Xác nhận đăng ký</string>
+    <string name="MON">Thứ 2</string>
+    <string name="TUE">Thứ 3</string>
+    <string name="WED">Thứ 4</string>
+    <string name="THU">Thứ 5</string>
+    <string name="SAT">Thứ 7</string>
+    <string name="FRI">Thứ 6</string>
+    <string name="SUN">Chủ nhật</string>
+    <string name="successful">Đăng ký thành công</string>
+    <string name="mshs">Mã hồ sơ:</string>
+    <string name="emal">Email:</string>
+    <string name="facebook">Facebook:</string>
+    <string name="schooName">Nơi tốt nghiệp:</string>
+    <string name="statusHS">Trạng thái hồ sơ:</string>
+    <string name="note">* Ghi nhớ mã số hồ sơ dùng để tra cứu thông tin và trạng thái của hồ sơ tuyển sinh</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="find">Tìm</string>
+    <string name="yearID">Niêm học</string>
+    <string name="semester">Học kì</string>
+    <string name="notFound">Không tìm thấy lịch học</string>
 
     <string-array name="Sex">
         <item>Nam</item>
         <item>Nữ</item>
         <item>Khác</item>
+    </string-array>
+
+    <string-array name="semester">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="week">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
     </string-array>
 
 

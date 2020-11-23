@@ -1,5 +1,6 @@
 package com.example.Service.Response;
 
+import com.example.Model.DebtInfo;
 import com.example.Model.LearningLevelInfo;
 import com.example.Model.ScheduleInfo;
 import com.example.Model.SpecialBranchInfo;
@@ -39,4 +40,7 @@ public class ResponseModel {
 
     @ElementList(name = "GetScheduleResult", required = false)
     public List<ScheduleInfo> resultSchedule;
+
+    @ElementList(name = "GetDebtDemoResult", required = false)
+    public List<DebtInfo> resultDebt;
 }

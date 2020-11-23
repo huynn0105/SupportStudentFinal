@@ -2,9 +2,7 @@ package com.example.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.annotation.SuppressLint;
-import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +13,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.Model.LearningLevelInfo;
 import com.example.Model.SpecialBranchInfo;
 import com.example.Model.StudentCollectionInfo;
@@ -27,21 +24,17 @@ import com.example.Service.Response.ResponseEnvelope;
 import com.example.Service.RetrofitGenerator;
 import com.example.quanlyhocsinh.R;
 import com.google.android.material.textfield.TextInputLayout;
-
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Objects;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
     final String TAG = "TAG_ERROR";
-    Calendar date;
-    EditText edt_date, edt_fullName, edt_birthDay, edt_birthMonth, edt_birthYear, edt_birthPlace, edt_tel, edt_tel2, edt_address, edt_schoolName;
-    TextInputLayout input_date, input_fullName, input_birthDay, input_birthMonth, input_birthYear, input_gender, input_birthPlace, input_tel, input_tel2, input_address, input_learningLevelID, input_trainingLevelID, input_specialBranchID, input_schoolName;
+    EditText edt_fullName, edt_birthDay, edt_birthMonth, edt_birthYear, edt_birthPlace, edt_tel, edt_tel2, edt_address, edt_schoolName;
+    TextInputLayout  input_fullName, input_birthDay, input_birthMonth, input_birthYear, input_gender, input_birthPlace, input_tel, input_tel2, input_address, input_learningLevelID, input_trainingLevelID, input_specialBranchID, input_schoolName;
     Toolbar toolbar;
     TextView tv_web_link;
     Button btn_submit;
@@ -163,7 +156,8 @@ public class RegisterActivity extends AppCompatActivity {
             input_specialBranchID.setError("Không được bỏ trống!!!");
         else input_specialBranchID.setError("");
 
-        if (!fullName.isEmpty()
+        //                && Patterns.EMAIL_ADDRESS.matcher(mail).matches())
+        return !fullName.isEmpty()
                 && !birthYear.isEmpty()
                 && !birthDay.isEmpty()
                 && !birthMonth.isEmpty()
@@ -175,10 +169,7 @@ public class RegisterActivity extends AppCompatActivity {
                 && !trainingLevelInfo.getTrainingLevelID().isEmpty()
                 && trainingLevelInfo != null
                 && !specialBranchInfo.getSpecialBranchID().isEmpty()
-                && !schoolName.isEmpty())
-//                && Patterns.EMAIL_ADDRESS.matcher(mail).matches())
-            return true;
-        return false;
+                && !schoolName.isEmpty();
     }
 
     public boolean isStringInt(String s) {
@@ -218,6 +209,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<ResponseEnvelope> call, Throwable t) {
                 Log.d(TAG, Objects.requireNonNull(t.getMessage()));
+                Toast.makeText(RegisterActivity.this, "Có lỗi xảy ra!!!\nKiểm tra kết nối và thử lại sau", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -262,7 +254,14 @@ public class RegisterActivity extends AppCompatActivity {
     public void getSpecialBranch(int learningLevelID, String trainingLevelID) {
         RequestEnvelope requestEnvelop = new RequestEnvelope();
         RequestBody requestBody = new RequestBody();
-        requestBody.GetSpecialBranch = RequestModel.builder().learningLevelID(learningLevelID).trainingLevelID(trainingLevelID).build();
+
+
+        requestBody.GetSpecialBranch = RequestModel.builder()
+                .learningLevelID(learningLevelID)
+                .trainingLevelID(trainingLevelID)
+                .build();
+
+
         requestEnvelop.setRequestBody(requestBody);
         Call<ResponseEnvelope> call = RetrofitGenerator.getRetrofit().GetSpecialBranch(requestEnvelop);
         call.enqueue(new Callback<ResponseEnvelope>() {
@@ -292,32 +291,12 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<ResponseEnvelope> call, Throwable t) {
                 Log.e("TAG", Objects.requireNonNull(t.getMessage()));
+                Toast.makeText(RegisterActivity.this, "Có lỗi xảy ra!!!\nThử lại sau", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
 
-    @SuppressLint("SetTextI18n")
-    public void showDateTimePicker() {
-        final Calendar currentDate = Calendar.getInstance();
-        date = Calendar.getInstance();
-        new DatePickerDialog(this, (view, year, monthOfYear, dayOfMonth) -> {
-            input_date.setError("");
-            edt_date.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
-            date.set(year, monthOfYear, dayOfMonth);
-            if (date.getTimeInMillis() > currentDate.getTimeInMillis() - 567648000007L) {
-                input_date.setError("Bạn chưa đủ 18 tuổi");
-                edt_date.setText("");
-            }
-
-        }, date.get(Calendar.YEAR) - 18, date.get(Calendar.MONTH), date.get(Calendar.DATE)).show();
-
-    }
-
-
-    public void setDate(View view) {
-        showDateTimePicker();
-    }
 
     private void init() {
         toolbar = findViewById(R.id.toolbar);
@@ -361,6 +340,11 @@ public class RegisterActivity extends AppCompatActivity {
     public void createStudentCollection(String fullName, int birthDay, int birthMonth, int birthYear, String birthPlace,
                                         int gender, String address, String tel, String tel2, int learningLevelID, String trainingLevelID,
                                         String specialBranchID, String schoolName) {
+
+        final ProgressDialog progressDialog = new ProgressDialog(RegisterActivity.this);
+        progressDialog.setMessage("Đang kiểm tra..");
+        progressDialog.show();
+
         RequestEnvelope requestEnvelop = new RequestEnvelope();
         RequestBody requestBody = new RequestBody();
 
@@ -388,8 +372,8 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseEnvelope> call, Response<ResponseEnvelope> response) {
                 if (response.body() != null) {
+                    progressDialog.dismiss();
                     StudentCollectionInfo studentCollectionInfo = response.body().responseBody.createStudentCollectionModel.resultCreateStudentCollection;
-                    Log.d("Dulieu", studentCollectionInfo.toString());
                     if (studentCollectionInfo.getErrorCode() != 0) {
                         Toast.makeText(RegisterActivity.this, studentCollectionInfo.getErrorDesc(), Toast.LENGTH_SHORT).show();
                     } else {
@@ -398,7 +382,6 @@ public class RegisterActivity extends AppCompatActivity {
                         intent.setFlags(-1);
                         startActivity(intent);
                         finish();
-                        Log.d("Dulieu", "Lỗi");
                     }
 
                 } else {
@@ -408,7 +391,9 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseEnvelope> call, Throwable t) {
-                Log.d(TAG + "111", t.getMessage());
+                progressDialog.dismiss();
+                Log.e(TAG, t.getMessage());
+                Toast.makeText(RegisterActivity.this, "Có lỗi xảy ra!!!\nThử vài sau", Toast.LENGTH_SHORT).show();
             }
         });
 

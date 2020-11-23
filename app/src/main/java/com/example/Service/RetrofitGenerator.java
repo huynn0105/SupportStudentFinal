@@ -28,17 +28,14 @@ public class RetrofitGenerator {
             .baseUrl(BASE_URL);
 
     public static <S> S createService(Class<S> serviceClass) {
-        okHttpClient.interceptors().add(new Interceptor() {
-            @Override
-            public okhttp3.Response intercept(Chain chain) throws IOException {
-                Request original = chain.request();
-                Request.Builder requestBuilder = original.newBuilder()
-                        .header("Content-Type", "text/xml;charset=UTF-8")
-                        .method(original.method(), original.body());
+        okHttpClient.interceptors().add(chain -> {
+            Request original = chain.request();
+            Request.Builder requestBuilder = original.newBuilder()
+                    .header("Content-Type", "text/xml;charset=UTF-8")
+                    .method(original.method(), original.body());
 
-                Request request = requestBuilder.build();
-                return chain.proceed(request);
-            }
+            Request request = requestBuilder.build();
+            return chain.proceed(request);
         });
 
         OkHttpClient client = okHttpClient.connectTimeout(2, TimeUnit.MINUTES)

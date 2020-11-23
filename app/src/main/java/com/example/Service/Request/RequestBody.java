@@ -1,11 +1,9 @@
 package com.example.Service.Request;
 
-import com.example.Model.StudentCollectionInfo;
-
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.NamespaceList;
-import org.simpleframework.xml.Root;
+
 
 
 @NamespaceList({
@@ -34,8 +32,9 @@ public class RequestBody {
     @Element(name ="GetSubjectMark",required = false)
     public RequestModel GetSubjectMark;
 
-
-
     @Element(name ="GetSchedule",required = false)
     public RequestModel GetSchedule;
+
+    @Element(name ="GetDebtDemo",required = false)
+    public RequestModel GetDebt;
 }

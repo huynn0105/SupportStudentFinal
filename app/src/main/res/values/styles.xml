@@ -3,7 +3,7 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@android:color/darker_gray</item>
-        <item name="colorPrimaryDark">@android:color/darker_gray</item>
+        <item name="colorPrimaryDark">@color/bpBlue</item>
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>

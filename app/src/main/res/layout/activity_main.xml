@@ -1,61 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.example.Activity.MainActivity">
-    <RelativeLayout
-        android:background="#2196F3"
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_110sdp">
-        <ImageView
-            android:layout_marginStart="@dimen/_20sdp"
-            android:id="@+id/img_avatar"
-            android:layout_centerVertical="true"
-            android:layout_width="@dimen/_90sdp"
-            android:layout_height="@dimen/_90sdp"
-            android:src="@drawable/ic_eclip_h"/>
-        <TextView
-            android:id="@+id/tv_fullName"
-            android:textAllCaps="true"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_25sdp"
-            android:textStyle="bold"
-            android:textSize="@dimen/_16sdp"
-            android:textColor="#fff"
-            android:layout_toEndOf="@id/img_avatar"
-            android:layout_width="wrap_content"
+
+        <RelativeLayout
+            android:id="@+id/viewTop"
+            android:background="@color/bpBlue"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tên sinh viên"/>
-        <TextView
-            android:id="@+id/tv_mssv"
-            android:textStyle="bold"
-            android:textColor="#fff"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_toEndOf="@id/img_avatar"
-            android:layout_below="@id/tv_fullName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mã SV:"/>
-        <TextView
-            android:id="@+id/tv_class"
-            android:textStyle="bold"
-            android:textColor="#fff"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_toEndOf="@id/img_avatar"
-            android:layout_below="@id/tv_fullName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lớp:"/>
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:layout_marginTop="@dimen/_20sdp"
+                android:id="@+id/img_avatar"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_eclip_h" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/img_avatar"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_fullName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textAllCaps="true"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_mssv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/mssv"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_class"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/classs"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+            </LinearLayout>
     </RelativeLayout>
+    <View
+        android:layout_below="@id/viewTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_gravity="center"
         android:id="@+id/rv_main"
-        tools:listitem="@layout/row_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@id/viewTop"
+        android:layout_marginEnd="@dimen/_10sdp"
+        tools:listitem="@layout/row_view" />
+</RelativeLayout>
+</androidx.core.widget.NestedScrollView>

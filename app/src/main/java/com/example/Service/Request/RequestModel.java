@@ -1,18 +1,16 @@
 package com.example.Service.Request;
-
 import org.simpleframework.xml.Element;
 
 import lombok.Builder;
-
 
 @Builder
 public class RequestModel {
     //GetLearningLevel
     @Element(name = "partnerIdentity", required = false)
-    public String partnerIdentity ="";
+    public String partnerIdentity;
 
     @Element(name = "signature", required = false)
-    public String signature ="";
+    public String signature;
 
     @Element(name = "learningLevelID", required = false)
     public int learningLevelID;
@@ -35,7 +33,7 @@ public class RequestModel {
     public int topRow;
 
 
-    //CreateStudentCollectionResponse
+    //CreateStudentCollection
 
     @Element(name = "apiTransactionUuid", required = false)
     String apiTransactionUuid;

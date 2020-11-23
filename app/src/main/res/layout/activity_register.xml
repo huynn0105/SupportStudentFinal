@@ -9,6 +9,7 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
+        android:background="#fff"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -44,8 +45,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:drawablePadding="10dp"
-                    android:hint="Họ và tên"
-                    android:inputType="text" />
+                    android:hint="@string/fullName"
+                    android:inputType="text"
+                    android:autofillHints="" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
@@ -55,7 +57,8 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:orientation="horizontal"
-                android:weightSum="3">
+                android:weightSum="3"
+                android:baselineAligned="false">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_birthDay"
@@ -75,8 +78,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:drawablePadding="@dimen/_10sdp"
-                        android:hint="Ngày sinh"
-                        android:inputType="numberDecimal" />
+                        android:hint="@string/birthDay"
+                        android:inputType="numberDecimal"
+                        android:autofillHints="" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -99,8 +103,9 @@
                         android:layout_below="@+id/edt_password"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:drawablePadding="@dimen/_10sdp"
-                        android:hint="Tháng sinh"
-                        android:inputType="numberDecimal" />
+                        android:hint="@string/birthMonth"
+                        android:inputType="numberDecimal"
+                        android:autofillHints="" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -124,35 +129,12 @@
                         android:layout_below="@+id/edt_password"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:drawablePadding="@dimen/_10sdp"
-                        android:hint="Năm sinh"
-                        android:inputType="numberDecimal" />
+                        android:hint="@string/BirthYear"
+                        android:inputType="numberDecimal"
+                        android:autofillHints="" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
-            <!--            <com.google.android.material.textfield.TextInputLayout-->
-            <!--                android:id="@+id/input_date"-->
-            <!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginStart="@dimen/_20sdp"-->
-            <!--                android:layout_marginTop="@dimen/_10sdp"-->
-            <!--                android:layout_marginEnd="@dimen/_20sdp"-->
-            <!--                android:focusable="true"-->
-            <!--                android:focusableInTouchMode="true"-->
-            <!--                tools:ignore="MissingConstraints">-->
-
-            <!--                <EditText-->
-            <!--                    android:id="@+id/edt_date"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_marginTop="20dp"-->
-            <!--                    android:cursorVisible="false"-->
-            <!--                    android:focusable="false"-->
-            <!--                    android:hint="Ngày tháng năm sinh"-->
-            <!--                    android:onClick="setDate"-->
-            <!--                    tools:ignore="Autofill,HardcodedText,TextFields" />-->
-
-            <!--            </com.google.android.material.textfield.TextInputLayout>-->
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_gender"
@@ -162,7 +144,7 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:hint="Giới tính"
+                android:hint="@string/gender"
                 android:orientation="horizontal">
 
 
@@ -194,8 +176,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:hint="Nơi sinh "
-                    android:inputType="textMultiLine" />
+                    android:hint="@string/birthPlace"
+                    android:inputType="textMultiLine"
+                    android:autofillHints="" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -217,8 +200,9 @@
                     android:layout_below="@+id/edt_password"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:hint="Điện thoại thí sinh"
-                    android:inputType="number" />
+                    android:hint="@string/tel"
+                    android:inputType="number"
+                    android:autofillHints="" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -240,8 +224,9 @@
                     android:layout_below="@+id/edt_password"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:hint="Điện thoại phụ huynh"
-                    android:inputType="number" />
+                    android:hint="@string/tel2"
+                    android:inputType="number"
+                    android:autofillHints="" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -264,8 +249,9 @@
                     android:layout_below="@+id/edt_password"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:hint="Địa chỉ thường trú"
-                    android:inputType="textMultiLine" />
+                    android:hint="@string/address"
+                    android:inputType="textMultiLine"
+                    android:autofillHints="" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -276,7 +262,7 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:hint="Trình độ"
+                android:hint="@string/learningLevel"
                 android:orientation="horizontal">
 
                 <AutoCompleteTextView
@@ -297,7 +283,7 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:hint="Bậc học"
+                android:hint="@string/trainingLevel"
                 android:orientation="horizontal">
 
 
@@ -317,7 +303,7 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
-                android:hint="Ngành đào tạo">
+                android:hint="@string/specialBranch">
 
                 <AutoCompleteTextView
                     android:focusable="false"
@@ -344,7 +330,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="Điểm trung bình lớp 12"
+                android:text="@string/sumMark12"
                 android:textSize="16sp"
                 android:textStyle="italic" />
 
@@ -354,7 +340,8 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:orientation="horizontal"
-                android:weightSum="3">
+                android:weightSum="3"
+                android:baselineAligned="false">
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
@@ -371,8 +358,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:drawablePadding="@dimen/_10sdp"
-                        android:hint="Cả năm"
-                        android:inputType="numberDecimal" />
+                        android:hint="@string/sum"
+                        android:inputType="numberDecimal"
+                        android:autofillHints="" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -392,8 +380,9 @@
                         android:layout_below="@+id/edt_password"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:drawablePadding="@dimen/_10sdp"
-                        android:hint="Học kì 1"
-                        android:inputType="numberDecimal" />
+                        android:hint="@string/sum1"
+                        android:inputType="numberDecimal"
+                        android:autofillHints="" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -412,8 +401,9 @@
                         android:layout_below="@+id/edt_password"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:drawablePadding="@dimen/_10sdp"
-                        android:hint="Học kì 2"
-                        android:inputType="numberDecimal" />
+                        android:hint="@string/sum2"
+                        android:inputType="numberDecimal"
+                        android:autofillHints="" />
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
@@ -438,8 +428,9 @@
                     android:layout_below="@+id/edt_password"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:drawablePadding="@dimen/_10sdp"
-                    android:hint="Nơi tốt nghiệp"
-                    android:inputType="text" />
+                    android:hint="@string/schoolName"
+                    android:inputType="text"
+                    android:autofillHints="" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -451,7 +442,7 @@
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:layout_marginBottom="@dimen/_20sdp"
                 android:background="@drawable/custom_btn_login"
-                android:text="Xác nhận đăng ký"
+                android:text="@string/confirm"
                 android:textColor="#fff" />
         </LinearLayout>
 

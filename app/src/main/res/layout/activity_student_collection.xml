@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/layout_studentCollection"
     tools:context="com.example.Activity.StudentCollectionActivity">
 
     <androidx.appcompat.widget.Toolbar
+        android:background="#fff"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -21,7 +23,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
-        android:text="Đăng ký thành công"
+        android:text="@string/successful"
         android:textColor="@color/signUp"
         android:textSize="@dimen/_26sdp"
         android:textStyle="bold"/>
@@ -37,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Mã hồ sơ: "
+            android:text="@string/mshs"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold" />
@@ -48,7 +50,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="StudentCollectionID"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp" />
     </LinearLayout>
@@ -64,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Họ tên: "
+            android:text="@string/fullName"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold" />
@@ -75,7 +76,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Huy Nguyễn"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp" />
     </LinearLayout>
@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Ngày sinh: "
+            android:text="@string/birthDay"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold" />
@@ -103,7 +103,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="BirthDateText"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp" />
     </LinearLayout>
@@ -120,7 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Địa chỉ: "
+            android:text="@string/address"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold" />
@@ -131,7 +130,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Địa chỉ"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp" />
     </LinearLayout>
@@ -148,7 +146,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Điện thoại di động: "
+            android:text="@string/tel"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold" />
@@ -159,7 +157,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Tel"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp" />
     </LinearLayout>
@@ -176,7 +173,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Điện thoại phụ huynh: "
+            android:text="@string/tel2"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold" />
@@ -187,7 +184,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Tel2"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp" />
     </LinearLayout>
@@ -204,7 +200,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Email: "
+            android:text="@string/emal"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold" />
@@ -215,7 +211,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Email"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp" />
     </LinearLayout>
@@ -232,7 +227,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Facebook: "
+            android:text="@string/facebook"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold" />
@@ -243,7 +238,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Facebook"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp" />
     </LinearLayout>
@@ -259,7 +253,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Nơi tốt nghiệp: "
+            android:text="@string/schooName"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold" />
@@ -270,8 +264,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="schoolName"
-            android:textColor="#000"
             android:textSize="@dimen/_16sdp" />
     </LinearLayout>
 
@@ -285,7 +277,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="Trạng thái hồ sơ: "
+            android:text="@string/statusHS"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold" />
@@ -296,7 +288,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_5sdp"
-            android:text="StudentCollectionStatusID"
             android:textColor="#000"
             android:textSize="@dimen/_16sdp" />
     </LinearLayout>
@@ -309,7 +300,7 @@
         android:textSize="@dimen/_15sdp"
         android:layout_marginStart="@dimen/_10sdp"
         android:textStyle="italic"
-        android:text="* Ghi nhớ mã số hồ sơ dùng để tra cứu thông tin và trạng thái của hồ sơ tuyển sinh"/>
+        android:text="@string/note"/>
 
 
 </LinearLayout>

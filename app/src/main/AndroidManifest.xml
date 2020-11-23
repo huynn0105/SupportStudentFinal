@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,13 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.Activity.ScheduleActivity"></activity>
+        <activity android:name="com.example.Activity.DebtActivity"></activity>
+        <activity android:name="com.example.Activity.ScheduleActivity" />
         <activity android:name="com.example.Activity.SubjectMarkActivity" />
         <activity android:name="com.example.Activity.StudentInfoActivity" />
         <activity android:name="com.example.Activity.StudentCollectionActivity" />
-        <activity android:name="com.example.Activity.TraCuuSVActivity" />
-        <activity android:name="com.example.Activity.TkbLopActivity" />
-        <activity android:name="com.example.Activity.TraCuuHSTSActivity" />
+        <activity android:name="com.example.Activity.FindStudentCollectionActivity" />
         <activity
             android:name="com.example.Activity.RegisterActivity"
             android:windowSoftInputMode="adjustResize" />

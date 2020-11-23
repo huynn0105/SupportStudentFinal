@@ -11,25 +11,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <View
+                android:background="@color/bpBlue"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_220sdp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:background="@drawable/bg"/>
 
                 <ImageView
                     android:id="@+id/img_logo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/ic_school_24" />
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_school_24"
+                    android:contentDescription="@string/todo" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/img_logo"
                     android:layout_centerHorizontal="true"
-                    android:text="Hệ thống sinh viên"
+                    android:text="@string/titleName"
                     android:textColor="@android:color/holo_red_light"
                     android:textSize="32sp"
                     android:textStyle="bold" />
@@ -54,7 +63,7 @@
                     tools:ignore="MissingConstraints">
 
                     <EditText
-                        android:text="042HA001"
+                        android:text="19.03.14.01.17"
                         android:id="@+id/edt_mssv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -78,7 +87,7 @@
                     tools:ignore="MissingConstraints">
 
                     <EditText
-                        android:text="20011991"
+                        android:text="27042000"
                         android:id="@+id/edt_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -139,17 +148,16 @@
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
 
-                <TextView
-                    android:id="@+id/tv_forgot"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="20dp"
-                    android:onClick="ForgotPassword"
-                    android:text="Quên mật khẩu?"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    tools:ignore="HardcodedText" />
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_forgot"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:text="Quên mật khẩu?"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    tools:ignore="HardcodedText" />-->
 
             </LinearLayout>
 
