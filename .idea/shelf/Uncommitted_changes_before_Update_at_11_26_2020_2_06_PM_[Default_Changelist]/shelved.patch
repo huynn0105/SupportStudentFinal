@@ -1,0 +1,689 @@
+Index: app/src/main/res/layout/activity_schedule.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\"com.example.Activity.ScheduleActivity\">\r\n\r\n    <androidx.appcompat.widget.Toolbar\r\n        android:id=\"@+id/toolbar\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"?attr/actionBarSize\"\r\n        android:background=\"#fff\"\r\n        android:elevation=\"1dp\"\r\n        app:popupTheme=\"@style/ThemeOverlay.AppCompat.Light\" />\r\n\r\n    <androidx.core.widget.NestedScrollView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\">\r\n        <LinearLayout\r\n            android:layout_marginTop=\"@dimen/_10sdp\"\r\n            android:visibility=\"gone\"\r\n            android:id=\"@+id/layout_schedule\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:orientation=\"vertical\"\r\n            android:paddingStart=\"@dimen/_5sdp\"\r\n            android:paddingEnd=\"@dimen/_5sdp\">\r\n        <com.google.android.material.textfield.TextInputLayout\r\n            style=\"@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu\"\r\n            android:layout_width=\"@dimen/_120sdp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_10sdp\"\r\n            android:hint=\"Tuần\">\r\n\r\n            <AutoCompleteTextView\r\n                android:id=\"@+id/dropdown_week\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:dropDownHeight=\"@dimen/_300sdp\"\r\n                android:inputType=\"none\"\r\n                tools:ignore=\"LabelFor\" />\r\n\r\n        </com.google.android.material.textfield.TextInputLayout>\r\n\r\n\r\n\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:layout_marginTop=\"@dimen/_5sdp\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                app:cardCornerRadius=\"@dimen/_6sdp\"\r\n                app:cardElevation=\"@dimen/_3sdp\"\r\n                app:cardUseCompatPadding=\"true\">\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:orientation=\"vertical\">\r\n\r\n                    <RelativeLayout\r\n                        android:id=\"@+id/rl2\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:background=\"#94bdff\"\r\n                        android:padding=\"@dimen/_5sdp\">\r\n\r\n                        <TextView\r\n                            android:layout_width=\"wrap_content\"\r\n                            android:layout_height=\"wrap_content\"\r\n                            android:text=\"@string/MON\"\r\n                            android:textColor=\"@android:color/black\"\r\n                            android:textSize=\"@dimen/_16sdp\"\r\n                            android:textStyle=\"bold\" />\r\n                    </RelativeLayout>\r\n\r\n                    <androidx.recyclerview.widget.RecyclerView\r\n                        android:id=\"@+id/rv_schedule2\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        app:layoutManager=\"androidx.recyclerview.widget.LinearLayoutManager\"\r\n                        tools:itemCount=\"2\"\r\n                        tools:listitem=\"@layout/row_schedule\" />\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                app:cardCornerRadius=\"@dimen/_6sdp\"\r\n                app:cardElevation=\"@dimen/_3sdp\"\r\n                app:cardUseCompatPadding=\"true\">\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:orientation=\"vertical\">\r\n\r\n                    <RelativeLayout\r\n                        android:id=\"@+id/rl3\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:background=\"#94bdff\"\r\n                        android:padding=\"@dimen/_5sdp\">\r\n\r\n                        <TextView\r\n                            android:layout_width=\"wrap_content\"\r\n                            android:layout_height=\"wrap_content\"\r\n                            android:text=\"@string/TUE\"\r\n                            android:textColor=\"@android:color/black\"\r\n                            android:textSize=\"@dimen/_16sdp\"\r\n                            android:textStyle=\"bold\" />\r\n\r\n                    </RelativeLayout>\r\n\r\n                    <androidx.recyclerview.widget.RecyclerView\r\n                        android:id=\"@+id/rv_schedule3\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        app:layoutManager=\"androidx.recyclerview.widget.LinearLayoutManager\"\r\n                        tools:itemCount=\"2\"\r\n                        tools:listitem=\"@layout/row_schedule\" />\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                app:cardCornerRadius=\"@dimen/_6sdp\"\r\n                app:cardElevation=\"@dimen/_3sdp\"\r\n                app:cardUseCompatPadding=\"true\">\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:orientation=\"vertical\">\r\n\r\n                    <RelativeLayout\r\n                        android:id=\"@+id/rl4\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:background=\"#94bdff\"\r\n                        android:padding=\"@dimen/_5sdp\">\r\n\r\n                        <TextView\r\n                            android:layout_width=\"wrap_content\"\r\n                            android:layout_height=\"wrap_content\"\r\n                            android:text=\"@string/WED\"\r\n                            android:textColor=\"@android:color/black\"\r\n                            android:textSize=\"@dimen/_16sdp\"\r\n                            android:textStyle=\"bold\" />\r\n\r\n                    </RelativeLayout>\r\n\r\n                    <androidx.recyclerview.widget.RecyclerView\r\n                        android:id=\"@+id/rv_schedule4\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        app:layoutManager=\"androidx.recyclerview.widget.LinearLayoutManager\"\r\n                        tools:itemCount=\"2\"\r\n                        tools:listitem=\"@layout/row_schedule\" />\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                app:cardCornerRadius=\"@dimen/_6sdp\"\r\n                app:cardElevation=\"@dimen/_3sdp\"\r\n                app:cardUseCompatPadding=\"true\">\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:orientation=\"vertical\">\r\n\r\n                    <RelativeLayout\r\n                        android:id=\"@+id/rl5\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:background=\"#94bdff\"\r\n                        android:padding=\"@dimen/_5sdp\">\r\n\r\n                        <TextView\r\n                            android:layout_width=\"wrap_content\"\r\n                            android:layout_height=\"wrap_content\"\r\n                            android:text=\"@string/THU\"\r\n                            android:textColor=\"@android:color/black\"\r\n                            android:textSize=\"@dimen/_16sdp\"\r\n                            android:textStyle=\"bold\" />\r\n\r\n                    </RelativeLayout>\r\n\r\n                    <androidx.recyclerview.widget.RecyclerView\r\n                        android:id=\"@+id/rv_schedule5\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        app:layoutManager=\"androidx.recyclerview.widget.LinearLayoutManager\"\r\n                        tools:itemCount=\"2\"\r\n                        tools:listitem=\"@layout/row_schedule\" />\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                app:cardCornerRadius=\"@dimen/_6sdp\"\r\n                app:cardElevation=\"@dimen/_3sdp\"\r\n                app:cardUseCompatPadding=\"true\">\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:orientation=\"vertical\">\r\n\r\n                    <RelativeLayout\r\n                        android:id=\"@+id/rl6\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:background=\"#94bdff\"\r\n                        android:padding=\"@dimen/_5sdp\">\r\n\r\n                        <TextView\r\n                            android:layout_width=\"wrap_content\"\r\n                            android:layout_height=\"wrap_content\"\r\n                            android:text=\"@string/FRI\"\r\n                            android:textColor=\"@android:color/black\"\r\n                            android:textSize=\"@dimen/_16sdp\"\r\n                            android:textStyle=\"bold\" />\r\n                    </RelativeLayout>\r\n\r\n                    <androidx.recyclerview.widget.RecyclerView\r\n                        android:id=\"@+id/rv_schedule6\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        app:layoutManager=\"androidx.recyclerview.widget.LinearLayoutManager\"\r\n                        tools:itemCount=\"2\"\r\n                        tools:listitem=\"@layout/row_schedule\" />\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                app:cardCornerRadius=\"@dimen/_6sdp\"\r\n                app:cardElevation=\"@dimen/_3sdp\"\r\n                app:cardUseCompatPadding=\"true\">\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:orientation=\"vertical\">\r\n\r\n                    <RelativeLayout\r\n                        android:id=\"@+id/rl7\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:background=\"#94bdff\"\r\n                        android:padding=\"@dimen/_5sdp\">\r\n\r\n                        <TextView\r\n                            android:layout_width=\"wrap_content\"\r\n                            android:layout_height=\"wrap_content\"\r\n                            android:text=\"@string/SAT\"\r\n                            android:textColor=\"@android:color/black\"\r\n                            android:textSize=\"@dimen/_16sdp\"\r\n                            android:textStyle=\"bold\" />\r\n\r\n                    </RelativeLayout>\r\n\r\n                    <androidx.recyclerview.widget.RecyclerView\r\n                        android:id=\"@+id/rv_schedule7\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        app:layoutManager=\"androidx.recyclerview.widget.LinearLayoutManager\"\r\n                        tools:itemCount=\"2\"\r\n                        tools:listitem=\"@layout/row_schedule\" />\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n            <com.google.android.material.card.MaterialCardView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                app:cardCornerRadius=\"@dimen/_6sdp\"\r\n                app:cardElevation=\"@dimen/_3sdp\"\r\n                app:cardUseCompatPadding=\"true\">\r\n\r\n                <LinearLayout\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:orientation=\"vertical\">\r\n\r\n                    <RelativeLayout\r\n                        android:id=\"@+id/rl8\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:background=\"#94bdff\"\r\n                        android:padding=\"@dimen/_5sdp\">\r\n\r\n                        <TextView\r\n\r\n                            android:layout_width=\"wrap_content\"\r\n                            android:layout_height=\"wrap_content\"\r\n                            android:text=\"@string/SUN\"\r\n                            android:textColor=\"@android:color/black\"\r\n                            android:textSize=\"@dimen/_16sdp\"\r\n                            android:textStyle=\"bold\" />\r\n\r\n                    </RelativeLayout>\r\n\r\n                    <androidx.recyclerview.widget.RecyclerView\r\n                        android:id=\"@+id/rv_schedule8\"\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        app:layoutManager=\"androidx.recyclerview.widget.LinearLayoutManager\"\r\n                        tools:itemCount=\"2\"\r\n                        tools:listitem=\"@layout/row_schedule\" />\r\n                </LinearLayout>\r\n            </com.google.android.material.card.MaterialCardView>\r\n\r\n\r\n        </LinearLayout>\r\n    </androidx.core.widget.NestedScrollView>\r\n\r\n    <TextView\r\n        android:id=\"@+id/notFound\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_gravity=\"center\"\r\n        android:text=\"@string/notFound\"\r\n        android:textColor=\"#f56275\"\r\n        android:textSize=\"@dimen/_22sdp\"\r\n        android:textStyle=\"bold|italic\"\r\n        android:visibility=\"gone\" />\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_schedule.xml	(revision ca5c9551dfb276442fcb9fcc1039db98e2096f73)
++++ app/src/main/res/layout/activity_schedule.xml	(date 1606244329150)
+@@ -18,39 +18,109 @@
+     <androidx.core.widget.NestedScrollView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
++
+         <LinearLayout
+-            android:layout_marginTop="@dimen/_10sdp"
+-            android:visibility="gone"
+-            android:id="@+id/layout_schedule"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
++            android:layout_marginTop="@dimen/_10sdp"
+             android:orientation="vertical"
+             android:paddingStart="@dimen/_5sdp"
+             android:paddingEnd="@dimen/_5sdp">
+-        <com.google.android.material.textfield.TextInputLayout
+-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+-            android:layout_width="@dimen/_120sdp"
+-            android:layout_height="wrap_content"
+-            android:layout_marginStart="@dimen/_10sdp"
+-            android:hint="Tuần">
++
++            <LinearLayout
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:orientation="horizontal"
++                android:weightSum="2">
++
++                <com.google.android.material.textfield.TextInputLayout
++                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_marginStart="@dimen/_10sdp"
++                    android:layout_weight="1"
++                    android:hint="Năm học"
++                    tools:ignore="HardcodedText">
++
++                    <AutoCompleteTextView
++                        android:focusable="false"
++                        android:id="@+id/dropdown_year"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        tools:ignore="LabelFor" />
++
++                </com.google.android.material.textfield.TextInputLayout>
++
++                <com.google.android.material.textfield.TextInputLayout
++                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_marginStart="@dimen/_10sdp"
++                    android:layout_marginEnd="@dimen/_10sdp"
++                    android:layout_weight="1"
++                    android:hint="Học kì"
++                    tools:ignore="HardcodedText">
+ 
+-            <AutoCompleteTextView
+-                android:id="@+id/dropdown_week"
+-                android:layout_width="match_parent"
+-                android:layout_height="wrap_content"
+-                android:dropDownHeight="@dimen/_300sdp"
+-                android:inputType="none"
+-                tools:ignore="LabelFor" />
++                    <AutoCompleteTextView
++                        android:focusable="false"
++                        android:id="@+id/dropdown_semester"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        tools:ignore="LabelFor" />
++
++                </com.google.android.material.textfield.TextInputLayout>
++            </LinearLayout>
++
++            <LinearLayout
++                android:layout_marginTop="@dimen/_7sdp"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:orientation="horizontal"
++                android:weightSum="2">
++
++                <com.google.android.material.textfield.TextInputLayout
++                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_marginStart="@dimen/_10sdp"
++                    android:layout_weight="1.1"
++                    android:hint="Tuần"
++                    tools:ignore="HardcodedText">
++
++                    <AutoCompleteTextView
++                        android:focusable="false"
++                        android:id="@+id/dropdown_week"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:dropDownHeight="@dimen/_300sdp"
++                        tools:ignore="LabelFor" />
+ 
+-        </com.google.android.material.textfield.TextInputLayout>
++                </com.google.android.material.textfield.TextInputLayout>
+ 
++                <Button
++                    android:id="@+id/btn_find"
++                    android:textColor="#fff"
++                    android:background="@drawable/custom_btn_login"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_marginStart="@dimen/_10sdp"
++                    android:layout_marginEnd="@dimen/_10sdp"
++                    android:layout_weight="0.9"
++                    android:text="Tìm" />
++            </LinearLayout>
+ 
++            <LinearLayout
++                android:visibility="gone"
++                android:id="@+id/layout_schedule"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:orientation="vertical">
+ 
+ 
+             <com.google.android.material.card.MaterialCardView
+-                android:layout_marginTop="@dimen/_5sdp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
++                android:layout_marginTop="@dimen/_5sdp"
+                 app:cardCornerRadius="@dimen/_6sdp"
+                 app:cardElevation="@dimen/_3sdp"
+                 app:cardUseCompatPadding="true">
+@@ -70,10 +140,21 @@
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
++                            android:layout_marginStart="@dimen/_5sdp"
+                             android:text="@string/MON"
+                             android:textColor="@android:color/black"
+                             android:textSize="@dimen/_16sdp"
+                             android:textStyle="bold" />
++
++                        <TextView
++                            android:id="@+id/date2"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_alignParentEnd="true"
++                            android:layout_centerVertical="true"
++                            android:layout_marginEnd="@dimen/_20sdp"
++                            android:textSize="@dimen/_13sdp"
++                            tools:ignore="RelativeOverlap" />
+                     </RelativeLayout>
+ 
+                     <androidx.recyclerview.widget.RecyclerView
+@@ -108,11 +189,21 @@
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
++                            android:layout_marginStart="@dimen/_5sdp"
+                             android:text="@string/TUE"
+                             android:textColor="@android:color/black"
+                             android:textSize="@dimen/_16sdp"
+                             android:textStyle="bold" />
+ 
++                        <TextView
++                            android:id="@+id/date3"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_alignParentEnd="true"
++                            android:layout_centerVertical="true"
++                            android:layout_marginEnd="@dimen/_20sdp"
++                            android:textSize="@dimen/_13sdp"
++                            tools:ignore="RelativeOverlap" />
+                     </RelativeLayout>
+ 
+                     <androidx.recyclerview.widget.RecyclerView
+@@ -147,11 +238,22 @@
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
++                            android:layout_marginStart="@dimen/_5sdp"
+                             android:text="@string/WED"
+                             android:textColor="@android:color/black"
+                             android:textSize="@dimen/_16sdp"
+                             android:textStyle="bold" />
+ 
++                        <TextView
++                            android:id="@+id/date4"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_alignParentEnd="true"
++                            android:layout_centerVertical="true"
++                            android:layout_marginEnd="@dimen/_20sdp"
++                            android:textSize="@dimen/_13sdp"
++                            tools:ignore="RelativeOverlap" />
++
+                     </RelativeLayout>
+ 
+                     <androidx.recyclerview.widget.RecyclerView
+@@ -186,11 +288,22 @@
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
++                            android:layout_marginStart="@dimen/_5sdp"
+                             android:text="@string/THU"
+                             android:textColor="@android:color/black"
+                             android:textSize="@dimen/_16sdp"
+                             android:textStyle="bold" />
+ 
++                        <TextView
++                            android:id="@+id/date5"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_alignParentEnd="true"
++                            android:layout_centerVertical="true"
++                            android:layout_marginEnd="@dimen/_20sdp"
++                            android:textSize="@dimen/_13sdp"
++                            tools:ignore="RelativeOverlap" />
++
+                     </RelativeLayout>
+ 
+                     <androidx.recyclerview.widget.RecyclerView
+@@ -225,10 +338,21 @@
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
++                            android:layout_marginStart="@dimen/_5sdp"
+                             android:text="@string/FRI"
+                             android:textColor="@android:color/black"
+                             android:textSize="@dimen/_16sdp"
+                             android:textStyle="bold" />
++
++                        <TextView
++                            android:id="@+id/date6"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_alignParentEnd="true"
++                            android:layout_centerVertical="true"
++                            android:layout_marginEnd="@dimen/_20sdp"
++                            android:textSize="@dimen/_13sdp"
++                            tools:ignore="RelativeOverlap" />
+                     </RelativeLayout>
+ 
+                     <androidx.recyclerview.widget.RecyclerView
+@@ -264,11 +388,22 @@
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
++                            android:layout_marginStart="@dimen/_5sdp"
+                             android:text="@string/SAT"
+                             android:textColor="@android:color/black"
+                             android:textSize="@dimen/_16sdp"
+                             android:textStyle="bold" />
+ 
++                        <TextView
++                            android:id="@+id/date7"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_alignParentEnd="true"
++                            android:layout_centerVertical="true"
++                            android:layout_marginEnd="@dimen/_20sdp"
++                            android:textSize="@dimen/_13sdp"
++                            tools:ignore="RelativeOverlap" />
++
+                     </RelativeLayout>
+ 
+                     <androidx.recyclerview.widget.RecyclerView
+@@ -301,7 +436,6 @@
+                         android:padding="@dimen/_5sdp">
+ 
+                         <TextView
+-
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/SUN"
+@@ -309,6 +443,16 @@
+                             android:textSize="@dimen/_16sdp"
+                             android:textStyle="bold" />
+ 
++                        <TextView
++                            android:id="@+id/date8"
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            android:layout_alignParentEnd="true"
++                            android:layout_centerVertical="true"
++                            android:layout_marginEnd="@dimen/_20sdp"
++                            android:textSize="@dimen/_13sdp"
++                            tools:ignore="RelativeOverlap" />
++
+                     </RelativeLayout>
+ 
+                     <androidx.recyclerview.widget.RecyclerView
+@@ -321,18 +465,21 @@
+                 </LinearLayout>
+             </com.google.android.material.card.MaterialCardView>
+ 
+-
+-        </LinearLayout>
+-    </androidx.core.widget.NestedScrollView>
+-
+-    <TextView
+-        android:id="@+id/notFound"
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:layout_gravity="center"
+-        android:text="@string/notFound"
+-        android:textColor="#f56275"
+-        android:textSize="@dimen/_22sdp"
+-        android:textStyle="bold|italic"
+-        android:visibility="gone" />
++            </LinearLayout>
++            <TextView
++                android:id="@+id/notFound"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_gravity="center"
++                android:layout_marginTop="@dimen/_16sdp"
++                android:gravity="center_horizontal"
++                android:text="@string/notFound"
++                android:textColor="#f56275"
++                android:textSize="@dimen/_22sdp"
++                android:textStyle="bold|italic"
++                android:visibility="gone" />
++        </LinearLayout>
++    </androidx.core.widget.NestedScrollView>
++
++
+ </LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_student_collection.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    android:id=\"@+id/layout_studentCollection\"\r\n    tools:context=\"com.example.Activity.StudentCollectionActivity\">\r\n\r\n    <androidx.appcompat.widget.Toolbar\r\n        android:background=\"#fff\"\r\n        android:id=\"@+id/toolbar\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"?attr/actionBarSize\"\r\n        android:elevation=\"1dp\"\r\n        app:popupTheme=\"@style/ThemeOverlay.AppCompat.Light\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/text_title\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_gravity=\"center\"\r\n        android:layout_marginTop=\"@dimen/_10sdp\"\r\n        android:layout_marginEnd=\"@dimen/_10sdp\"\r\n        android:text=\"@string/successful\"\r\n        android:textColor=\"@color/signUp\"\r\n        android:textSize=\"@dimen/_26sdp\"\r\n        android:textStyle=\"bold\"/>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"@dimen/_10sdp\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_10sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:text=\"@string/mshs\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_studentCollectionID\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_5sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\" />\r\n    </LinearLayout>\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_10sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:text=\"@string/fullName\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_fullName\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_5sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\" />\r\n    </LinearLayout>\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/text_birthDateText\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_10sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:text=\"@string/birthDay\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_birthDateText\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_5sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\" />\r\n    </LinearLayout>\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/text_address\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_10sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:text=\"@string/address\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_address\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_5sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\" />\r\n    </LinearLayout>\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/text_tel\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_10sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:text=\"@string/tel\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_tel\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_5sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\" />\r\n    </LinearLayout>\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/text_tel2\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_10sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:text=\"@string/tel2\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_tel2\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_5sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\" />\r\n    </LinearLayout>\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/text_email\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_10sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:text=\"@string/emal\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_email\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_5sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\" />\r\n    </LinearLayout>\r\n\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/text_facebook\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_10sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:text=\"@string/facebook\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_facebook\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_5sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\" />\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/text_schoolName\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_10sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:text=\"@string/schooName\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_schoolName\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_5sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:textSize=\"@dimen/_16sdp\" />\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\">\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_10sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:text=\"@string/statusHS\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_studentCollectionStatusID\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"@dimen/_5sdp\"\r\n            android:layout_marginBottom=\"@dimen/_5sdp\"\r\n            android:textColor=\"#000\"\r\n            android:textSize=\"@dimen/_16sdp\" />\r\n    </LinearLayout>\r\n\r\n    <TextView\r\n        android:textColor=\"@android:color/holo_red_dark\"\r\n        android:layout_marginTop=\"@dimen/_10sdp\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:textSize=\"@dimen/_15sdp\"\r\n        android:layout_marginStart=\"@dimen/_10sdp\"\r\n        android:textStyle=\"italic\"\r\n        android:text=\"@string/note\"/>\r\n\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_student_collection.xml	(revision ca5c9551dfb276442fcb9fcc1039db98e2096f73)
++++ app/src/main/res/layout/activity_student_collection.xml	(date 1606237895450)
+@@ -2,17 +2,17 @@
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/layout_studentCollection"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="vertical"
+-    android:id="@+id/layout_studentCollection"
+     tools:context="com.example.Activity.StudentCollectionActivity">
+ 
+     <androidx.appcompat.widget.Toolbar
+-        android:background="#fff"
+         android:id="@+id/toolbar"
+         android:layout_width="match_parent"
+         android:layout_height="?attr/actionBarSize"
++        android:background="#fff"
+         android:elevation="1dp"
+         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+ 
+@@ -26,7 +26,7 @@
+         android:text="@string/successful"
+         android:textColor="@color/signUp"
+         android:textSize="@dimen/_26sdp"
+-        android:textStyle="bold"/>
++        android:textStyle="bold" />
+ 
+     <LinearLayout
+         android:layout_width="wrap_content"
+@@ -293,14 +293,14 @@
+     </LinearLayout>
+ 
+     <TextView
+-        android:textColor="@android:color/holo_red_dark"
+-        android:layout_marginTop="@dimen/_10sdp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
++        android:layout_marginStart="@dimen/_10sdp"
++        android:layout_marginTop="@dimen/_10sdp"
++        android:text="@string/note"
++        android:textColor="@android:color/holo_red_dark"
+         android:textSize="@dimen/_15sdp"
+-        android:layout_marginStart="@dimen/_10sdp"
+-        android:textStyle="italic"
+-        android:text="@string/note"/>
++        android:textStyle="italic" />
+ 
+ 
+ </LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/Activity/ScheduleActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.Activity;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.appcompat.widget.Toolbar;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\nimport android.annotation.SuppressLint;\r\nimport android.app.ProgressDialog;\r\nimport android.content.Intent;\r\nimport android.graphics.Color;\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\nimport android.view.View;\r\nimport android.widget.ArrayAdapter;\r\nimport android.widget.AutoCompleteTextView;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.RelativeLayout;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\nimport com.example.Adapter.ScheduleAdapter;\r\nimport com.example.Model.ScheduleInfo;\r\nimport com.example.Service.Request.RequestBody;\r\nimport com.example.Service.Request.RequestEnvelope;\r\nimport com.example.Service.Request.RequestModel;\r\nimport com.example.Service.Response.ResponseEnvelope;\r\nimport com.example.Service.RetrofitGenerator;\r\nimport com.example.quanlyhocsinh.R;\r\nimport org.joda.time.DateTime;\r\nimport org.joda.time.Weeks;\r\nimport org.joda.time.format.DateTimeFormat;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\nimport java.util.Objects;\r\nimport retrofit2.Call;\r\nimport retrofit2.Callback;\r\nimport retrofit2.Response;\r\n\r\npublic class ScheduleActivity extends AppCompatActivity {\r\n    List<ScheduleInfo> scheduleInfoList;\r\n    RecyclerView[] rv_schedule = new RecyclerView[9];\r\n    LinearLayout layout_schedule;\r\n    TextView notFound;\r\n    String [] week;\r\n    RelativeLayout[] rl = new RelativeLayout[9];\r\n    AutoCompleteTextView dropdown_week;\r\n    Intent intent;\r\n    Toolbar toolbar;\r\n    DateTime dateTime;\r\n    String mssv;\r\n    int year, semester;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_schedule);\r\n        init();\r\n        dateTime = DateTime.now();\r\n        year = dateTime.getYear();\r\n        semester = 0;\r\n        if (dateTime.getMonthOfYear() >= 8)\r\n            semester = 1;\r\n        else semester = 2;\r\n\r\n        getDataIntent();\r\n        week = getResources().getStringArray(R.array.week);\r\n        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,\r\n                android.R.layout.simple_expandable_list_item_1, week);\r\n        dropdown_week.setAdapter(adapter);\r\n        dropdown_week.setOnItemClickListener((adapterView, view, i, l) -> {\r\n            String wk= adapterView.getAdapter().getItem(i).toString();\r\n            dropdown_week.setText(wk,false);\r\n            setScheduleWeek(Integer.parseInt(wk));\r\n\r\n        });\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n    private void getDataIntent() {\r\n        intent = getIntent();\r\n        if (intent.hasExtra(\"Schedule\")) {\r\n            mssv = intent.getStringExtra(\"Schedule\");\r\n            if (semester != 0) {\r\n                getSchedule(mssv, year, semester);\r\n            } else {\r\n                Toast.makeText(this, \"Có lỗi xảy ra!!!\\nThử lại sau\", Toast.LENGTH_SHORT).show();\r\n            }\r\n        }\r\n    }\r\n\r\n    private void init() {\r\n        rv_schedule[2] = findViewById(R.id.rv_schedule2);\r\n        rv_schedule[3] = findViewById(R.id.rv_schedule3);\r\n        rv_schedule[4] = findViewById(R.id.rv_schedule4);\r\n        rv_schedule[5] = findViewById(R.id.rv_schedule5);\r\n        rv_schedule[6] = findViewById(R.id.rv_schedule6);\r\n        rv_schedule[7] = findViewById(R.id.rv_schedule7);\r\n        rv_schedule[8] = findViewById(R.id.rv_schedule8);\r\n        dropdown_week = findViewById(R.id.dropdown_week);\r\n        layout_schedule = findViewById(R.id.layout_schedule);\r\n        notFound = findViewById(R.id.notFound);\r\n        rl[2] = findViewById(R.id.rl2);\r\n        rl[3] = findViewById(R.id.rl3);\r\n        rl[4] = findViewById(R.id.rl4);\r\n        rl[5] = findViewById(R.id.rl5);\r\n        rl[6] = findViewById(R.id.rl6);\r\n        rl[7] = findViewById(R.id.rl7);\r\n        rl[8] = findViewById(R.id.rl8);\r\n        toolbar = findViewById(R.id.toolbar);\r\n        setSupportActionBar(toolbar);\r\n        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);\r\n        getSupportActionBar().setDisplayShowHomeEnabled(true);\r\n        getSupportActionBar().setTitle(\"Lịch học\");\r\n        toolbar.setTitleTextColor(getResources().getColor(android.R.color.black));\r\n        toolbar.setNavigationOnClickListener(view -> finish());\r\n\r\n\r\n    }\r\n\r\n    private void getSchedule(String studentCode, int yearID, int semester) {\r\n        final ProgressDialog progressDialog = new ProgressDialog(ScheduleActivity.this);\r\n        progressDialog.setMessage(\"Đang kiểm tra..\");\r\n        progressDialog.show();\r\n\r\n        RequestEnvelope requestEnvelop = new RequestEnvelope();\r\n        RequestBody requestBody = new RequestBody();\r\n        requestBody.GetSchedule = RequestModel.builder().studentCode(studentCode).yearID(yearID).semester(semester).build();\r\n        requestEnvelop.setRequestBody(requestBody);\r\n        Call<ResponseEnvelope> callback = RetrofitGenerator.getRetrofit().GetSchedule(requestEnvelop);\r\n        callback.enqueue(new Callback<ResponseEnvelope>() {\r\n            @SuppressLint(\"SetTextI18n\")\r\n            @Override\r\n            public void onResponse(Call<ResponseEnvelope> call, Response<ResponseEnvelope> response) {\r\n                progressDialog.dismiss();\r\n                ResponseEnvelope responseEnvelope = response.body();\r\n                if (responseEnvelope != null) {\r\n                    scheduleInfoList = responseEnvelope.responseBody.getScheduleModel.resultSchedule;\r\n                    if (scheduleInfoList.size() > 0) {\r\n                        layout_schedule.setVisibility(View.VISIBLE);\r\n                        notFound.setVisibility(View.GONE);\r\n                        dropdown_week.setText(getWeekNum(scheduleInfoList.get(0))+\"\",false);\r\n                        setScheduleWeek(getWeekNum(scheduleInfoList.get(0)));\r\n\r\n\r\n                    } else {\r\n                        notFound.setVisibility(View.VISIBLE);\r\n                        layout_schedule.setVisibility(View.GONE);\r\n                    }\r\n                } else {\r\n                    Toast.makeText(ScheduleActivity.this, \"Có lỗi xảy ra!!!\\nThử lại sau\", Toast.LENGTH_SHORT).show();\r\n                }\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(Call<ResponseEnvelope> call, Throwable t) {\r\n                progressDialog.dismiss();\r\n                Log.e(\"Dulieu\", t.getMessage());\r\n                Toast.makeText(ScheduleActivity.this, \"Có lỗi xảy ra!!!\\nKiểm tra kết nối và thử lại sau\", Toast.LENGTH_SHORT).show();\r\n                finish();\r\n            }\r\n        });\r\n    }\r\n    private void setScheduleWeek(int week){\r\n        List<ScheduleInfo>[] lists = new List[9];\r\n        ScheduleAdapter[] adapter = new ScheduleAdapter[9];\r\n        for (int i = 2; i <= 8; i++) {\r\n            lists[i] = new ArrayList<>();\r\n            for (ScheduleInfo info : scheduleInfoList) {\r\n                if (info.getDayText() == i) {\r\n                    if (week >= info.getStartWeek() && week <= info.getEndWeek()) {\r\n                        lists[i].add(info);\r\n                    }\r\n                }\r\n            }\r\n            adapter[i] = new ScheduleAdapter(ScheduleActivity.this, lists[i]);\r\n        }\r\n\r\n        for(int i =2;i<=8;i++)\r\n            rv_schedule[i].setAdapter(adapter[i]);\r\n\r\n        setViewDay(scheduleInfoList.get(0));\r\n    }\r\n\r\n    @SuppressLint(\"SetTextI18n\")\r\n    public int getWeekNum(ScheduleInfo info) {\r\n        int weeks = info.getStartWeek();\r\n        DateTime dateTime1 = DateTime.parse(info.getStartDate(),\r\n                DateTimeFormat.forPattern(\"yyyy-MM-dd'T'HH:mm:ss\"));\r\n        dateTime = DateTime.now();\r\n\r\n        weeks += Weeks.weeksBetween(dateTime1, dateTime).getWeeks();\r\n        return weeks;\r\n\r\n    }\r\n\r\n    @SuppressLint(\"SetTextI18n\")\r\n    public void setViewDay(ScheduleInfo info) {\r\n        String dayOfWeek;\r\n        int day = dateTime.getDayOfWeek()+1;\r\n        if(dropdown_week.getText().toString().equals(getWeekNum(info)+\"\")){\r\n            rl[day].setBackgroundColor(Color.parseColor(\"#f68084\"));\r\n        }else{\r\n            rl[day].setBackgroundColor(Color.parseColor(\"#94bdff\"));\r\n        }\r\n    }\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/Activity/ScheduleActivity.java	(revision ca5c9551dfb276442fcb9fcc1039db98e2096f73)
++++ app/src/main/java/com/example/Activity/ScheduleActivity.java	(date 1606273692767)
+@@ -12,6 +12,7 @@
+ import android.view.View;
+ import android.widget.ArrayAdapter;
+ import android.widget.AutoCompleteTextView;
++import android.widget.Button;
+ import android.widget.LinearLayout;
+ import android.widget.RelativeLayout;
+ import android.widget.TextView;
+@@ -27,6 +28,7 @@
+ import org.joda.time.DateTime;
+ import org.joda.time.Weeks;
+ import org.joda.time.format.DateTimeFormat;
++import org.joda.time.format.DateTimeFormatter;
+ import java.util.ArrayList;
+ import java.util.List;
+ import java.util.Objects;
+@@ -38,42 +40,77 @@
+     List<ScheduleInfo> scheduleInfoList;
+     RecyclerView[] rv_schedule = new RecyclerView[9];
+     LinearLayout layout_schedule;
+-    TextView notFound;
+-    String [] week;
++    String strSemester;
+     RelativeLayout[] rl = new RelativeLayout[9];
+-    AutoCompleteTextView dropdown_week;
++    AutoCompleteTextView dropdown_week, dropdown_year, dropdown_semester;
+     Intent intent;
+     Toolbar toolbar;
+     DateTime dateTime;
++    Button btn_find;
+     String mssv;
+     int year, semester;
++    String yearID, semesterID, weekID;
++    TextView[] date = new TextView[9];
++    TextView notFound;
+ 
++    @SuppressLint("SetTextI18n")
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_schedule);
+         init();
++        final String[][] weeks = new String[1][1];
+         dateTime = DateTime.now();
+         year = dateTime.getYear();
++        yearID = year + "";
++        dropdown_year.setText(year + "");
+         semester = 0;
+-        if (dateTime.getMonthOfYear() >= 8)
++        if (dateTime.getMonthOfYear() >= 8 || dateTime.getMonthOfYear()<2) {
+             semester = 1;
+-        else semester = 2;
++            semesterID = "1";
++            weeks[0] = getResources().getStringArray(R.array.weekOfSemster1);
+ 
++        } else {
++            semester = 2;
++            semesterID = "2";
++           weeks[0] = getResources().getStringArray(R.array.weekOfSemster2);
++
++        }
++        dropdown_semester.setText(semester + "");
++        String[] semester = getResources().getStringArray(R.array.semester);
++        initDropdown(dropdown_semester, semester);
++        dropdown_semester.setOnItemClickListener((adapterView, view, i, l) -> {
++            semesterID = adapterView.getAdapter().getItem(i).toString();
++            if(semesterID.equals("1"))
++                weeks[0] = getResources().getStringArray(R.array.weekOfSemster1);
++            else weeks[0] = getResources().getStringArray(R.array.weekOfSemster2);
++            dropdown_week.setText("");
++            initDropdown(dropdown_week, weeks[0]);
++        });
+         getDataIntent();
+-        week = getResources().getStringArray(R.array.week);
+-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+-                android.R.layout.simple_expandable_list_item_1, week);
+-        dropdown_week.setAdapter(adapter);
+-        dropdown_week.setOnItemClickListener((adapterView, view, i, l) -> {
+-            String wk= adapterView.getAdapter().getItem(i).toString();
+-            dropdown_week.setText(wk,false);
+-            setScheduleWeek(Integer.parseInt(wk));
++
++        initDropdown(dropdown_week, weeks[0]);
++        dropdown_week.setOnItemClickListener((adapterView, view, i, l) -> weekID = adapterView.getAdapter().getItem(i).toString());
+ 
++        String[] years = initYear(year);
++        initDropdown(dropdown_year, years);
++        dropdown_year.setOnItemClickListener((adapterView, view, i, l) -> yearID = adapterView.getAdapter().getItem(i).toString());
++
++        btn_find.setOnClickListener(view -> {
++            if (weekID.isEmpty())
++                weekID = "0";
++
++            getSchedule(mssv, Integer.parseInt(yearID), Integer.parseInt(semesterID), Integer.parseInt(weekID));
+         });
+ 
+ 
++    }
+ 
++    private void initDropdown(AutoCompleteTextView dropdown, String[] array) {
++        final String[] txt = new String[1];
++        ArrayAdapter<String> adapter = new ArrayAdapter<>(ScheduleActivity.this,
++                android.R.layout.simple_expandable_list_item_1, array);
++        dropdown.setAdapter(adapter);
+ 
+     }
+ 
+@@ -81,11 +118,8 @@
+         intent = getIntent();
+         if (intent.hasExtra("Schedule")) {
+             mssv = intent.getStringExtra("Schedule");
+-            if (semester != 0) {
+-                getSchedule(mssv, year, semester);
+-            } else {
+-                Toast.makeText(this, "Có lỗi xảy ra!!!\nThử lại sau", Toast.LENGTH_SHORT).show();
+-            }
++            if (semester != 0) getSchedule(mssv, year, semester, 0);
++            else Toast.makeText(this, "Có lỗi xảy ra!!!\nThử lại sau", Toast.LENGTH_SHORT).show();
+         }
+     }
+ 
+@@ -97,8 +131,18 @@
+         rv_schedule[6] = findViewById(R.id.rv_schedule6);
+         rv_schedule[7] = findViewById(R.id.rv_schedule7);
+         rv_schedule[8] = findViewById(R.id.rv_schedule8);
++        date[2] = findViewById(R.id.date2);
++        date[3] = findViewById(R.id.date3);
++        date[4] = findViewById(R.id.date4);
++        date[5] = findViewById(R.id.date5);
++        date[6] = findViewById(R.id.date6);
++        date[7] = findViewById(R.id.date7);
++        date[8] = findViewById(R.id.date8);
+         dropdown_week = findViewById(R.id.dropdown_week);
++        dropdown_year = findViewById(R.id.dropdown_year);
++        dropdown_semester = findViewById(R.id.dropdown_semester);
+         layout_schedule = findViewById(R.id.layout_schedule);
++        btn_find = findViewById(R.id.btn_find);
+         notFound = findViewById(R.id.notFound);
+         rl[2] = findViewById(R.id.rl2);
+         rl[3] = findViewById(R.id.rl3);
+@@ -118,7 +162,7 @@
+ 
+     }
+ 
+-    private void getSchedule(String studentCode, int yearID, int semester) {
++    private void getSchedule(String studentCode, int yearID, int semester, int week) {
+         final ProgressDialog progressDialog = new ProgressDialog(ScheduleActivity.this);
+         progressDialog.setMessage("Đang kiểm tra..");
+         progressDialog.show();
+@@ -137,15 +181,19 @@
+                 if (responseEnvelope != null) {
+                     scheduleInfoList = responseEnvelope.responseBody.getScheduleModel.resultSchedule;
+                     if (scheduleInfoList.size() > 0) {
++                        Log.d("Dulieu",scheduleInfoList.get(0).toString());
+                         layout_schedule.setVisibility(View.VISIBLE);
+                         notFound.setVisibility(View.GONE);
+-                        dropdown_week.setText(getWeekNum(scheduleInfoList.get(0))+"",false);
+-                        setScheduleWeek(getWeekNum(scheduleInfoList.get(0)));
+-
++                        if (week == 0) {
++                            dropdown_week.setText(getWeekNum(scheduleInfoList.get(0)) + "", false);
++                            weekID = getWeekNum(scheduleInfoList.get(0)) + "";
++                            setScheduleWeek(getWeekNum(scheduleInfoList.get(0)));
++                        } else
++                            setScheduleWeek(week);
+ 
+                     } else {
+-                        notFound.setVisibility(View.VISIBLE);
+                         layout_schedule.setVisibility(View.GONE);
++                        notFound.setVisibility(View.VISIBLE);
+                     }
+                 } else {
+                     Toast.makeText(ScheduleActivity.this, "Có lỗi xảy ra!!!\nThử lại sau", Toast.LENGTH_SHORT).show();
+@@ -161,7 +209,8 @@
+             }
+         });
+     }
+-    private void setScheduleWeek(int week){
++
++    private void setScheduleWeek(int week) {
+         List<ScheduleInfo>[] lists = new List[9];
+         ScheduleAdapter[] adapter = new ScheduleAdapter[9];
+         for (int i = 2; i <= 8; i++) {
+@@ -173,15 +222,27 @@
+                     }
+                 }
+             }
++            lists[i].sort((info1, info2) -> {
++                String[] time1 = info1.getTimeText().split("h");
++                String[] time2 = info2.getTimeText().split("h");
++                return Integer.parseInt(time1[0]) - Integer.parseInt(time2[0]);
++            });
+             adapter[i] = new ScheduleAdapter(ScheduleActivity.this, lists[i]);
+         }
+-
+-        for(int i =2;i<=8;i++)
++        for (int i = 2; i <= 8; i++)
+             rv_schedule[i].setAdapter(adapter[i]);
+ 
+         setViewDay(scheduleInfoList.get(0));
+     }
+ 
++
++    private String[] initYear(int year) {
++        String[] years = new String[6];
++        for (int i = -1; i < years.length - 1; i++)
++            years[i + 1] = String.valueOf(year - i);
++        return years;
++    }
++
+     @SuppressLint("SetTextI18n")
+     public int getWeekNum(ScheduleInfo info) {
+         int weeks = info.getStartWeek();
+@@ -197,12 +258,17 @@
+     @SuppressLint("SetTextI18n")
+     public void setViewDay(ScheduleInfo info) {
+         String dayOfWeek;
+-        int day = dateTime.getDayOfWeek()+1;
+-        if(dropdown_week.getText().toString().equals(getWeekNum(info)+"")){
++        int day = dateTime.getDayOfWeek() + 1;
++        if (dropdown_week.getText().toString().equals(getWeekNum(info) + "")) {
+             rl[day].setBackgroundColor(Color.parseColor("#f68084"));
+-        }else{
++        } else {
+             rl[day].setBackgroundColor(Color.parseColor("#94bdff"));
+         }
++        DateTime dateTime1 = DateTime.parse(info.getStartDate()).plusWeeks(Integer.parseInt(dropdown_week.getText().toString()) - 1);
++        DateTimeFormatter fmt = DateTimeFormat.forPattern("dd/MM/YYYY");
++        for (int i = 2; i <= 8; i++) {
++            date[i].setText(fmt.print(dateTime1.withDayOfWeek(i - 1)));
++        }
+     }
+ 
+ 
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">Support Student</string>\r\n    <string name=\"SubjectName\">Tên môn học</string>\r\n    <string name=\"UnitText\">Số TC:</string>\r\n    <string name=\"FinalSummary\">Tổng kết môn lần cuối:</string>\r\n    <string name=\"TestAverage\">Trung bình kiểm tra</string>\r\n    <string name=\"Exam1\">Thi lần 1</string>\r\n    <string name=\"Summary1\">Tổng kết môn lần 1</string>\r\n    <string name=\"Exam2\">Thi lần 2</string>\r\n    <string name=\"Summary2\">Tổng kết môn lần 2</string>\r\n    <string name=\"titleName\">Hệ thống sinh viên</string>\r\n    <string name=\"todo\">TODO</string>\r\n    <string name=\"mssv\">Mã SV:</string>\r\n    <string name=\"classs\">Lớp</string>\r\n    <string name=\"fullName\">Họ và tên</string>\r\n    <string name=\"birthDay\">Ngày sinh</string>\r\n    <string name=\"birthMonth\">Tháng sinh</string>\r\n    <string name=\"BirthYear\">Năm sinh</string>\r\n    <string name=\"gender\">Giới tính</string>\r\n    <string name=\"birthPlace\">Nơi sinh</string>\r\n    <string name=\"tel\">Điện thoại thí sinh</string>\r\n    <string name=\"tel2\">Điện thoại phụ huynh</string>\r\n    <string name=\"address\">Địa chỉ thường trú</string>\r\n    <string name=\"learningLevel\">Trình độ</string>\r\n    <string name=\"trainingLevel\">Bậc học</string>\r\n    <string name=\"specialBranch\">Ngành đào tạo</string>\r\n    <string name=\"sumMark12\">Điểm trung bình lớp 12</string>\r\n    <string name=\"sum\">Cả năm</string>\r\n    <string name=\"sum1\">Học kì 1</string>\r\n    <string name=\"sum2\">Học kì 2</string>\r\n    <string name=\"schoolName\">Nơi tốt nghiệp</string>\r\n    <string name=\"confirm\">Xác nhận đăng ký</string>\r\n    <string name=\"MON\">Thứ 2</string>\r\n    <string name=\"TUE\">Thứ 3</string>\r\n    <string name=\"WED\">Thứ 4</string>\r\n    <string name=\"THU\">Thứ 5</string>\r\n    <string name=\"SAT\">Thứ 7</string>\r\n    <string name=\"FRI\">Thứ 6</string>\r\n    <string name=\"SUN\">Chủ nhật</string>\r\n    <string name=\"successful\">Đăng ký thành công</string>\r\n    <string name=\"mshs\">Mã hồ sơ:</string>\r\n    <string name=\"emal\">Email:</string>\r\n    <string name=\"facebook\">Facebook:</string>\r\n    <string name=\"schooName\">Nơi tốt nghiệp:</string>\r\n    <string name=\"statusHS\">Trạng thái hồ sơ:</string>\r\n    <string name=\"note\">* Ghi nhớ mã số hồ sơ dùng để tra cứu thông tin và trạng thái của hồ sơ tuyển sinh</string>\r\n    <string name=\"logout\">Đăng xuất</string>\r\n    <string name=\"find\">Tìm</string>\r\n    <string name=\"yearID\">Niêm học</string>\r\n    <string name=\"semester\">Học kì</string>\r\n    <string name=\"notFound\">Không tìm thấy lịch học</string>\r\n\r\n    <string-array name=\"Sex\">\r\n        <item>Nam</item>\r\n        <item>Nữ</item>\r\n        <item>Khác</item>\r\n    </string-array>\r\n\r\n    <string-array name=\"semester\">\r\n        <item>1</item>\r\n        <item>2</item>\r\n    </string-array>\r\n\r\n    <string-array name=\"week\">\r\n        <item>1</item>\r\n        <item>2</item>\r\n        <item>3</item>\r\n        <item>4</item>\r\n        <item>5</item>\r\n        <item>6</item>\r\n        <item>7</item>\r\n        <item>8</item>\r\n        <item>9</item>\r\n        <item>10</item>\r\n        <item>11</item>\r\n        <item>12</item>\r\n        <item>13</item>\r\n        <item>14</item>\r\n        <item>15</item>\r\n        <item>16</item>\r\n        <item>17</item>\r\n        <item>18</item>\r\n        <item>19</item>\r\n        <item>20</item>\r\n        <item>21</item>\r\n        <item>22</item>\r\n        <item>23</item>\r\n    </string-array>\r\n\r\n\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(revision ca5c9551dfb276442fcb9fcc1039db98e2096f73)
++++ app/src/main/res/values/strings.xml	(date 1606273092819)
+@@ -61,7 +61,7 @@
+         <item>2</item>
+     </string-array>
+ 
+-    <string-array name="week">
++    <string-array name="weekOfSemster1">
+         <item>1</item>
+         <item>2</item>
+         <item>3</item>
+@@ -85,6 +85,34 @@
+         <item>21</item>
+         <item>22</item>
+         <item>23</item>
++        <item>24</item>
++        <item>25</item>
++    </string-array>
++    <string-array name="weekOfSemster2">
++        <item>27</item>
++        <item>28</item>
++        <item>29</item>
++        <item>30</item>
++        <item>31</item>
++        <item>32</item>
++        <item>33</item>
++        <item>34</item>
++        <item>35</item>
++        <item>36</item>
++        <item>37</item>
++        <item>38</item>
++        <item>39</item>
++        <item>40</item>
++        <item>41</item>
++        <item>42</item>
++        <item>43</item>
++        <item>44</item>
++        <item>45</item>
++        <item>46</item>
++        <item>47</item>
++        <item>48</item>
++        <item>49</item>
++        <item>50</item>
+     </string-array>
+ 
+ 
