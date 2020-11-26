@@ -2,17 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_studentCollection"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/layout_studentCollection"
     tools:context="com.example.Activity.StudentCollectionActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:background="#fff"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:background="#fff"
         android:elevation="1dp"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -26,7 +26,7 @@
         android:text="@string/successful"
         android:textColor="@color/signUp"
         android:textSize="@dimen/_26sdp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -293,14 +293,14 @@
     </LinearLayout>
 
     <TextView
-        android:textColor="@android:color/holo_red_dark"
-        android:layout_marginTop="@dimen/_10sdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_15sdp"
         android:layout_marginStart="@dimen/_10sdp"
-        android:textStyle="italic"
-        android:text="@string/note"/>
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/note"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="italic" />
 
 
 </LinearLayout>
