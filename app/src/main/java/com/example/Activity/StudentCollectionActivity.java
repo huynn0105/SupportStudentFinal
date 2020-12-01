@@ -18,7 +18,7 @@ public class StudentCollectionActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     String statusStudent = "";
-    TextView tv_studentCollectionID, tv_fullName, tv_birthDateText, tv_address, tv_tel, tv_tel2, tv_email, tv_facebook, tv_schoolName, tv_studentCollectionStatusID, text_birthDateText, text_address, text_tel, text_tel2, text_email, text_facebook, text_schoolName,text_title;
+    TextView tv_studentCollectionID, tv_fullName, tv_birthDateText, tv_address, tv_tel, tv_tel2, tv_email, tv_facebook, tv_schoolName, tv_studentCollectionStatusID, text_birthDateText, text_address, text_tel, text_tel2, text_email, text_facebook, text_schoolName,text_title,tv_note;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +32,11 @@ public class StudentCollectionActivity extends AppCompatActivity {
     private void GetData() {
         Intent intent = getIntent();
         if (intent.hasExtra("Student")) {
-            if(intent.getFlags()!=-1)
+            if(intent.getFlags()!=-1){
                 text_title.setVisibility(View.GONE);
+                tv_note.setVisibility(View.GONE);
+            }
+
             StudentCollectionInfo studentCollectionInfo = (StudentCollectionInfo) intent.getSerializableExtra("Student");
             if (studentCollectionInfo != null) {
                 tv_studentCollectionID.setText(studentCollectionInfo.getStudentCollectionID()+"");
@@ -97,6 +100,7 @@ public class StudentCollectionActivity extends AppCompatActivity {
 
     private void init() {
         tv_address = findViewById(R.id.tv_address);
+        tv_note = findViewById(R.id.tv_note);
         tv_studentCollectionID = findViewById(R.id.tv_studentCollectionID);
         tv_fullName = findViewById(R.id.tv_fullName);
         tv_birthDateText = findViewById(R.id.tv_birthDateText);

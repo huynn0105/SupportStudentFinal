@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     startInfo();
                     break;
                 case 4:
-                    Toast.makeText(this, "Chưa có thông báo nào!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Đang phát triển...^^", Toast.LENGTH_SHORT).show();
                     break;
                 case 5:
                     Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
@@ -130,7 +130,8 @@ public class MainActivity extends AppCompatActivity {
 //        chucNangArrayList.add(new FunctionModel("Đăng ký tuyển sinh", R.drawable.ic_register_h));
 //        chucNangArrayList.add(new FunctionModel("Chương trình học", R.drawable.ic_plan_h));
 //        chucNangArrayList.add(new FunctionModel("Điểm rèn luyện", R.drawable.ic_training_h));
-        chucNangArrayList.add(new FunctionModel("Thông báo", R.drawable.ic_info_h));
+        chucNangArrayList.add(new FunctionModel("Lịch thi", R.drawable.ic_calendar_pass_exam_h));
+        //chucNangArrayList.add(new FunctionModel("Thông báo", R.drawable.ic_info_h));
         chucNangArrayList.add(new FunctionModel("Liên hệ", R.drawable.icon_email));
     }
 
